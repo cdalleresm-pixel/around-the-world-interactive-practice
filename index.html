@@ -89,8 +89,30 @@
 #answers .choice.answer-correct:has(input:disabled):hover{background:#edf7f1}
 #answers .choice.answer-incorrect:has(input:disabled):hover{background:#fff6eb}
 @media(max-width:570px){.grammar-field-caption{font-size:.88rem}#task .row{gap:6px}#task .row>button{margin:3px 4px 3px 0}}
-</style></head><body><main><h1>Unit 2 · Around the World</h1><small style="color:#627891;font-size:.75rem">Version 8.10.1 · Activity layout fixes</small><p class="sub">Vocabulary · First Conditional · Reading Comprehension</p><div class="app-tools"><button id="globalCatalan" class="secondary" type="button" aria-pressed="false" onclick="toggleGlobalCatalan()">Català: OFF</button></div><div class="stats" id="stats"></div><section id="home"><div class="panel journey-panel"><div class="journey-heading"><h2>Your learning journey</h2><p class="journey-intro">Follow the recommended order or choose the activity you need. All sections are available.</p></div><div class="journey-grid">
-<article class="journey-card journey-vocab"><div class="journey-top"><span class="journey-step">01 · VOCABULARY</span><span class="journey-icon" aria-hidden="true">▤</span></div><h3>Vocabulary Lab</h3><p>Learn and practise 46 travel words.</p><div class="vocab-progress-label"><span id="vocabProgressText">0 of 46 words seen</span><span id="vocabProgressPercent">0%</span></div><div class="vocab-progress" role="progressbar" aria-label="Vocabulary words seen" aria-valuemin="0" aria-valuemax="46" aria-valuenow="0" id="vocabProgressBar"><div id="vocabProgressFill"></div></div><div class="journey-actions" id="vocabActions"><button onclick="start('vocab')">Start Vocabulary Lab →</button></div></article>
+
+.lab-panel{border:1px solid #cdddeb;background:#f2f7fc;padding:22px;border-radius:15px}
+.lab-context{display:block;padding:16px;background:#fff;border-left:4px solid #547da6;border-radius:8px;line-height:1.7;font-size:1.08rem;margin:0 0 18px}
+.lab-input-label{display:flex;flex-direction:column;gap:8px;font-size:.92rem;font-weight:600;color:#2b4c6c}
+.lab-answer{width:100%;min-width:0;font-size:1rem;font-weight:400;line-height:1.6}
+textarea.lab-answer{min-height:115px}
+.lab-target{font-size:1.2rem;font-weight:700;color:#234f7d}
+.lab-self-check{display:flex;align-items:flex-start;gap:9px;padding:10px 0;font-weight:400;line-height:1.5}
+.lab-self-check input{width:18px;height:18px;flex-shrink:0;margin-top:3px;accent-color:#315d88}
+.lab-pairs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:14px;margin:12px 0}
+.lab-match-column{display:flex;flex-direction:column;gap:9px;min-width:0}
+.lab-pairs button{width:100%;min-height:48px;text-align:left;margin:0;padding:12px;font-size:.92rem;line-height:1.45;overflow-wrap:anywhere}
+.lab-pairs button.selected{background:#d3e6f8;border:2px solid #386e9e}
+.lab-pairs button:disabled{opacity:.75}
+.lab-built{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:74px;padding:14px;background:#fff;border:1px dashed #85a4c1;border-radius:10px;line-height:1.5;margin-bottom:16px;color:#587087}
+.lab-tiles{display:flex;gap:8px;flex-wrap:wrap}
+.lab-panel .lab-tile{min-height:44px;margin:0;padding:10px 14px}
+.lab-tiles .lab-tile:disabled{opacity:.3}
+.lab-support{margin-top:18px;border-top:1px solid #c7d8e8;padding-top:12px}
+.lab-support h3{font-size:1rem}
+#labEvidenceSummary{margin-top:8px}.journey-actions .lab-new-session{background:transparent;border:0;color:#476681;text-decoration:underline;text-underline-offset:3px;font-size:.85rem;min-height:44px;padding:8px 6px;box-shadow:none}
+@media(max-width:570px){.lab-panel{padding:15px}.lab-pairs{gap:8px;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)}.lab-pairs button{padding:10px 8px;font-size:.85rem}.lab-context{padding:13px;font-size:1rem}}
+</style></head><body><main><h1>Unit 2 · Around the World</h1><small style="color:#627891;font-size:.75rem">Version 8.11 · Vocabulary Lab variety</small><p class="sub">Vocabulary · First Conditional · Reading Comprehension</p><div class="app-tools"><button id="globalCatalan" class="secondary" type="button" aria-pressed="false" onclick="toggleGlobalCatalan()">Català: OFF</button></div><div class="stats" id="stats"></div><section id="home"><div class="panel journey-panel"><div class="journey-heading"><h2>Your learning journey</h2><p class="journey-intro">Follow the recommended order or choose the activity you need. All sections are available.</p></div><div class="journey-grid">
+<article class="journey-card journey-vocab"><div class="journey-top"><span class="journey-step">01 · VOCABULARY</span><span class="journey-icon" aria-hidden="true">▤</span></div><h3>Vocabulary Lab</h3><p>Practise 46 travel words in varied, 12-activity sessions.</p><div class="vocab-progress-label"><span id="vocabProgressText">0 of 46 words seen</span><span id="vocabProgressPercent">0%</span></div><div class="vocab-progress" role="progressbar" aria-label="Vocabulary words seen" aria-valuemin="0" aria-valuemax="46" aria-valuenow="0" id="vocabProgressBar"><div id="vocabProgressFill"></div></div><div class="journey-actions" id="vocabActions"><button onclick="start('vocab')">Start Vocabulary Lab →</button></div></article>
 <article class="journey-card"><div class="journey-top"><span class="journey-step">02 · GRAMMAR</span><span class="journey-icon" aria-hidden="true">✎</span></div><h3>First Conditional</h3><p>Explore possible future situations and their consequences.</p><div class="journey-actions" id="grammarActions"><button onclick="start('grammar')">Practise grammar →</button></div></article>
 <article class="journey-card journey-reading"><div class="journey-top"><span class="journey-step">03 · READING</span><span class="journey-icon" aria-hidden="true">▥</span></div><h3>Reading comprehension</h3><p>Learn strategies, apply them to texts and build confidence.</p><div class="reading-activities"><button class="reading-link" id="diagnosticLaunch" onclick="start('diagnostic')"><span><b>Quick Reading Check</b><small>Discover what you already know</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="skillsLaunch" onclick="start('skills')"><span><b>Reading Skills · Learn</b><small>Learn the strategies</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="readingLaunch" onclick="start('reading')"><span><b>Reading Practice · CA1/CA2</b><small>Practise assessment skills</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="challengeLaunch" onclick="start('challenge')"><span><b>Reading Challenge</b><small>Apply what you know</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="advancedLaunch" onclick="start('advanced')"><span><b>Advanced Reading</b><small>Optional extension for confident readers</small></span><span aria-hidden="true">→</span></button></div></article>
 </div><div class="journey-footer"><span>Suggested route: Vocabulary → Grammar → Reading</span><span>No activities are locked by this order.</span></div></div><div class="panel review-panel"><div><h3>Daily Review</h3><p>Revisit words and skills that need more practice.</p></div><button onclick="start('review')">Start Daily Review →</button></div><div class="panel"><h3>Your learning</h3><p id="recommendation"></p><button class="secondary" id="glossaryButton" aria-expanded="false" aria-controls="glossary" onclick="showGlossary()">Reading strategy glossary <span id="glossaryLanguage">(English)</span> ▾</button><div id="glossary" class="hidden glossary-inline" role="region" aria-label="Reading strategy glossary"></div><div class="progress-tools"><h4>Move your progress between devices</h4><button class="secondary" onclick="exportData()">Export progress code</button><button class="secondary" onclick="importData()">Import progress code</button><textarea id="transfer" placeholder="Progress code (optional)"></textarea><p class="foot">Progress is stored in this browser. Export your code to move devices. No login or internet needed. Avoid private information.</p></div></div><div class="panel" id="reportHome"><h2>My Learning Report</h2><p>Download your learning report. No name, email or personal details are requested. Submit the file through your school platform.</p><p class="tiny">Your report includes completed activities, first-try success, retries and support used. All data stays in this browser until you download the file.</p><button onclick="downloadReportPDF()">Open printable report (Save as PDF)</button><button class="secondary" onclick="downloadReportHTML()">Download styled HTML report</button><button class="secondary" onclick="downloadReportCSV()">Download CSV data (optional)</button><p class="tiny">You can download a partial report at any time.</p></div></section><section id="task" class="hidden"><span class="tag" id="stage"></span><div class="progress"><div id="bar"></div></div><h2 id="question"></h2><p class="sub" id="instruction"></p><div id="instructionMeaning" class="hidden" role="status" aria-live="polite"></div><details id="readingVocab" class="reading-vocab hidden"><summary>Vocabulary help · English definitions</summary><p class="tiny">Definitions are in English. Use “Explain in Catalan” if necessary.</p><dl id="readingVocabItems"></dl></details><div id="passage" class="reading hidden"></div><div id="answers"></div><div id="feedback" class="panel hidden" role="status" aria-live="polite"></div><div id="quickExplanation" class="panel hidden" aria-live="polite"></div><details id="catalanHelp" class="reading-vocab hidden"><summary>Explicació en català</summary><div id="catalanHelpText"></div></details><div id="guided" class="guided hidden" aria-live="polite"></div><div class="row"><button id="check" onclick="check()">Check my answer</button><button class="secondary" id="hintbtn" onclick="hint()">Get a hint</button><button class="secondary" id="modelbtn" onclick="model()">Show explanation</button><button class="secondary hidden" id="taskCatalanButton" onclick="toggleCatalanHelp()">Explain in Catalan</button><button class="secondary" onclick="goHome()">Home</button><button class="hidden" id="next" onclick="next()">Next →</button></div></section></main><script>
@@ -356,7 +378,7 @@ function updateReadingCards(){
 function wordTasks(list){return list.map(v=>({type:'word',v}))}
 function qTasks(text){return text.questions.map(q=>({type:'mc',...q,passage:text}))}
 function restartSection(m){if(!confirm('Start this practice again? Your previous learning history and review progress will be kept.'))return;state.sessions=state.sessions||{};delete state.sessions[m];save();start(m,false)}
-function start(m,resume){if(m==='diagnostic'&&!resume)seenDiagnosticTerms.clear();mode=m;index=resume?Math.max(0,Number(state.sessions?.[m]||0)):0;wrongStreak=0;tasks=[];if(m==='vocab')tasks=wordTasks(vocab);if(m==='review')tasks=buildDailyReview();if(m==='grammar')tasks=[{type:'grammarLesson'},...grammar.map(q=>({type:'mc',...q,skill:'Grammar'})),...extendedGrammarTasks];if(m==='skills')tasks=[{type:'skillLesson',lesson:0},...mini.map(q=>({type:'mc',q:q.q,opts:['Explicit','Implicit','Contradicted','Not justified'],a:q.a,why:q.why,skill:'CA2 · E/I/N',passage:{title:'Short text',body:q.body}})),...skillLessons.slice(1).map((lesson,i)=>({type:'skillLesson',lesson:i+1}))];if(m==='reading')tasks=[{type:'skillLesson',lesson:0},...qTasks(texts[0])];if(m==='challenge')tasks=[{type:'skillLesson',lesson:4},...qTasks(texts[1])];if(m==='diagnostic')tasks=sectionReadingBanks.diagnostic.flatMap(qTasks);if(m==='advanced'){tasks=[{type:'advancedLesson'},...sectionReadingBanks.advanced.flatMap(qTasks)]};$('home').classList.add('hidden');$('task').classList.remove('hidden');$('stats').classList.add('hidden');render()}
+function start(m,resume){if(m==='diagnostic'&&!resume)seenDiagnosticTerms.clear();mode=m;index=resume?Math.max(0,Number(state.sessions?.[m]||0)):0;wrongStreak=0;tasks=[];if(m==='vocab')tasks=makeVocabularySession(resume);if(m==='review')tasks=buildDailyReview();if(m==='grammar')tasks=[{type:'grammarLesson'},...grammar.map(q=>({type:'mc',...q,skill:'Grammar'})),...extendedGrammarTasks];if(m==='skills')tasks=[{type:'skillLesson',lesson:0},...mini.map(q=>({type:'mc',q:q.q,opts:['Explicit','Implicit','Contradicted','Not justified'],a:q.a,why:q.why,skill:'CA2 · E/I/N',passage:{title:'Short text',body:q.body}})),...skillLessons.slice(1).map((lesson,i)=>({type:'skillLesson',lesson:i+1}))];if(m==='reading')tasks=[{type:'skillLesson',lesson:0},...qTasks(texts[0])];if(m==='challenge')tasks=[{type:'skillLesson',lesson:4},...qTasks(texts[1])];if(m==='diagnostic')tasks=sectionReadingBanks.diagnostic.flatMap(qTasks);if(m==='advanced'){tasks=[{type:'advancedLesson'},...sectionReadingBanks.advanced.flatMap(qTasks)]};$('home').classList.add('hidden');$('task').classList.remove('hidden');$('stats').classList.add('hidden');render()}
 const guidedCases={
 '“Amira is willing to reconsider her first impressions.”':{before:'Amira expected the visit to be dull',after:'yet she found the stories surprisingly engaging',prompt:'Which sentence shows her FIRST impression?',choices:['Amira loves adventure.','Amira expected the visit to be dull.','Both cousins enjoyed watching the marine animals.'],correct:1,explain:'Primer pensava que seria avorrida; després la va trobar interessant. El connector yet indica contrast. El text no diu literalment que vulgui reconsiderar opinions: ho deduïm del canvi.'},
 '“The activities might not suit someone who dislikes physical effort.”':{before:'Canyoning is physically demanding',after:'some visitors may find the activities tiring',prompt:'Which clue shows that the trip requires effort?',choices:['All equipment is provided.','Canyoning is physically demanding.','Meals are NOT included.'],correct:1,explain:'Physically demanding i tiring són pistes que permeten deduir que pot no ser adequat per a algú que evita l’esforç.'},
@@ -649,10 +671,10 @@ function renderVocabularyDefinition(t){
 function render(){$('vocabPopup')?.remove();$('vocabNote')?.remove();$('instructionMeaning').classList.add('hidden');$('quickExplanation').classList.add('hidden');$('quickExplanation').replaceChildren();$('globalCatalan').classList.toggle('hidden',mode==='diagnostic');$('globalCatalan').style.display=mode==='diagnostic'?'none':'';guidedStep=0;guidedAnswered=false;checkedCorrect=false;explanationRevealed=false;$('guided').className='guided hidden';$('guided').innerHTML='';attempts=0;spellingAttempts=0;spellingDetected=false;hints=0;selection='';matchDone=false;$('instruction').classList.remove('hidden');$('feedback').className='panel hidden';$('answers').innerHTML='';delete $('answers').dataset.lessonOriginal;$('passage').classList.add('hidden');$('readingVocab').classList.add('hidden');$('readingVocab').open=false;$('catalanHelp').classList.add('hidden');$('catalanHelp').open=false;$('next').classList.add('hidden');$('check').classList.remove('hidden');$('hintbtn').classList.add('hidden');$('modelbtn').classList.remove('hidden');$('taskCatalanButton').classList.add('hidden');$('bar').style.width=(100*index/Math.max(1,tasks.length))+'%';if(index>=tasks.length&&mode==='review'&&tasks.length===0){$('stage').textContent='Daily Review';$('question').textContent='No review items yet';$('instruction').textContent='Daily Review uses vocabulary and reading skills you have already practised. Start with Vocabulary Lab, then come back here to review your learning.';$('answers').textContent='Go Home and choose Vocabulary Lab to get started.';$('check').classList.add('hidden');$('hintbtn').classList.add('hidden');$('modelbtn').classList.add('hidden');$('taskCatalanButton').classList.add('hidden');return}if(index>=tasks.length){state.sessions=state.sessions||{};delete state.sessions[mode];$('stage').textContent='Complete';$('question').textContent='Well done — session finished';$('instruction').textContent='Return on another day for spaced review. You can practise any section again.';$('check').classList.add('hidden');$('hintbtn').classList.add('hidden');$('modelbtn').classList.add('hidden');if(mode==='diagnostic'){let c=(state.reportCompletions||[]).filter(x=>x.mode==='diagnostic').slice(-tasks.length),first=c.filter(x=>x.firstTry).length,solved=c.filter(x=>x.correct).length,assisted=solved-first;state.diagnostic={correct:first,total:tasks.length,solved,assisted};state.advanced=first>=5;$('answers').textContent=`Independent first-try answers: ${first}/${tasks.length}. Correct after another attempt or support: ${assisted}. Not solved independently: ${tasks.length-first}. ${state.advanced?'Advanced reading may be a good next step.':'Reading Skills is a useful next step.'} All activities remain available.`}save();return}let t=tasks[index];$('stage').textContent=mode.toUpperCase()+' · '+(index+1)+'/'+tasks.length;if(t.type.endsWith('Lesson')){$('instruction').before($('question'));$('question').classList.remove('after-passage');$('question').textContent=t.type==='grammarLesson'?'First conditional — learn the meaning':t.type==='advancedLesson'?'Advanced reading: interpreting nuance':skillLessons[t.lesson].title;$('instruction').textContent=(t.type==='grammarLesson'||t.type==='advancedLesson'?'Read the explanation and complete the short check below.':'Read the explanation, then continue to the next activity.');$('answers').innerHTML='<div class="panel lesson">'+(t.type==='grammarLesson'?'<h3>What happens if…?</h3><p>Imagina que demà vols anar a la platja, però encara no saps quin temps farà.</p><div class="scenario-grid"><div class="scenario"><span class="weather-symbol" aria-hidden="true">☀</span><strong>If it’s sunny…</strong><span>we’ll go to the beach.</span><small>Si fa sol, anirem a la platja.</small></div><div class="scenario"><span class="weather-symbol" aria-hidden="true">☂</span><strong>If it rains…</strong><span>we’ll visit a museum.</span><small>Si plou, visitarem un museu.</small></div></div><p>Encara no sabem quin temps farà. Aquestes frases expliquen <strong>què farem si passa una determinada cosa</strong>.</p><div class="rule-parts"><div><strong>CONDICIÓ</strong><br>If + present simple</div><div><strong>RESULTAT</strong><br>will + verb en forma base</div></div><p><strong>Recorda:</strong> després d’<em>if</em> utilitzem el present simple, encara que parlem del futur. Després de <em>will</em> posem el verb sense <em>to</em> ni <em>-ing</em>.</p><p><em>If it rains, we’ll visit a museum.</em> = <em>We’ll visit a museum if it rains.</em> Si comencem amb <em>if</em>, separem les dues parts amb una coma.</p><div class="quick-check"><strong>Quick check · Què vol dir?</strong><p><em>If it rains tomorrow, we’ll stay at home.</em></p><label><input type="radio" name="meaningCheck" value="a"> Sabem segur que demà plourà.</label><label><input type="radio" name="meaningCheck" value="b"> És possible que plogui; si passa, ens quedarem a casa.</label><label><input type="radio" name="meaningCheck" value="c"> Ahir va ploure i ens vam quedar a casa.</label><button class="secondary" onclick="checkGrammarMeaning()">Check understanding</button><p id="meaningResult" role="status"></p></div>':t.type==='advancedLesson'?'<p><strong>Expressing contrast · Com expressem el contrast?</strong></p><p><strong>Although + subject + verb:</strong> <em>Although it rained, we went hiking.</em> (Tot i que plovia...)</p><p><strong>Despite + noun / -ing:</strong> <em>Despite the rain, we went hiking.</em> / <em>Despite being tired, we continued.</em></p><p><strong>In spite of + noun / -ing:</strong> <em>In spite of the rain, we went hiking.</em></p><p>Recorda: <strong>despite of</strong> és incorrecte, i <strong>despite</strong> no va directament seguit d’una oració amb subjecte i verb conjugat.</p><div class="lesson-check"><strong>Quick check</strong><p>Choose the grammatically correct sentence:</p><label><input type="radio" name="contrastCheck" value="a"> Despite it was cold, we went out.</label><label><input type="radio" name="contrastCheck" value="b"> Despite the cold, we went out.</label><label><input type="radio" name="contrastCheck" value="c"> Despite of the cold, we went out.</label><button class="secondary" onclick="checkContrast()">Check understanding</button><p id="contrastResult" role="status"></p></div><p><strong>Inference · Inferència:</strong> deduir una idea a partir de pistes del text, sense inventar fets. Si algú arriba amb paraigua i la roba mullada, <em>potser plou</em>; no podem afirmar que hagi oblidat mirar la previsió.</p><div class="lesson-check"><strong>Inference quick check</strong><p>Daniel sees dark clouds and hurries home. What is a reasonable inference?</p><label><input type="radio" name="inferCheck" value="a"> He may be worried about rain.</label><label><input type="radio" name="inferCheck" value="b"> He definitely forgot his keys.</label><button class="secondary" onclick="checkInference()">Check understanding</button><p id="inferResult" role="status"></p></div><p><strong>Provided that</strong> = sempre que / amb la condició que. <em>You can join provided that you can swim.</em> Saber nedar és la condició.</p><p>En una lectura avançada, cal distingir entre el que l’autor afirma, el que suggereix i el que només és possible. Fixa’t en els matisos, la intenció persuasiva i les limitacions de les proves.</p><p>Expressions útils: <em>although</em> (tot i que), <em>despite</em> (malgrat), <em>whereas</em> (mentre que / en canvi).</p><p>Advanced vocabulary: breathtaking scenery, unspoilt landscape, remote destination, secluded beach, bustling city, culturally enriching, physically demanding, rewarding experience, immersive experience, broaden your horizons, step outside your comfort zone, unwind, escape the daily routine, gain an insight into local life.</p>':skillLessons[t.lesson].html)+'</div>';$('answers').dataset.lessonOriginal=$('answers').innerHTML;renderLessonLanguage(t,$('answers'));$('check').textContent='Continue';$('hintbtn').classList.add('hidden');$('modelbtn').classList.add('hidden');$('taskCatalanButton').classList.add('hidden');return} $('check').textContent='Check my answer';if(t.type==='word'){$('hintbtn').classList.remove('hidden');direction='ca-en';renderVocabularyDefinition(t);$('instruction').textContent=t.v.category+' · Type the English word or expression';$('instruction').classList.toggle('hidden',index>=3);$('answers').innerHTML='<input type="text" id="word" autocomplete="off" aria-label="Your answer" placeholder="Type your answer">';$('word').addEventListener('keydown',e=>{if(e.key==='Enter')check()});if(wrongStreak>=2)showMatchingButton();}else{$('question').textContent=t.q;$('instruction').textContent=t.skill||'Choose the best answer';if(mode==='advanced'){let n=advancedExercises.findIndex(x=>x.q===t.q);if(n>=0){let panel=$('readingVocab'),items=$('readingVocabItems');items.replaceChildren();for(let [w,meaning] of (advancedVocabulary[n]||[])){if(isAnswerRevealingGlossary(w,meaning,t))continue;let dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=w;dd.textContent=advancedEnglishDefinitions[w.toLowerCase()]||wordDefinitions[w.toLowerCase()]||'Use the surrounding sentence to work out the meaning.';items.append(dt,dd)}panel.classList.remove('hidden')}}if(t.passage){$('passage').classList.remove('hidden');$('passage').textContent=t.passage.title+'\n\n'+t.passage.body;renderReadingVocabulary(t.passage);$('passage').after($('question'));$('question').classList.add('after-passage')}else{$('instruction').after($('question'));$('question').classList.remove('after-passage')}renderInstructionTerms();t.opts.forEach((o,i)=>{let lab=document.createElement('label');lab.className='choice';let inp=document.createElement('input');inp.type='radio';inp.name='answer';inp.value=i;inp.onchange=()=>selection=String(i);lab.append(inp,document.createTextNode(o));$('answers').append(lab)})};$('catalanHelp').classList.add('hidden')}
 function levenshtein(a,b){let p=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let q=[i];for(let j=1;j<=b.length;j++)q[j]=Math.min(q[j-1]+1,p[j]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=q}return p[b.length]}
 function reportId(){if(!state.reportId){let chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let bytes=new Uint8Array(8);if(window.crypto?.getRandomValues)crypto.getRandomValues(bytes);else for(let i=0;i<8;i++)bytes[i]=Math.floor(Math.random()*256);state.reportId='AW-'+Array.from(bytes,b=>chars[b%chars.length]).join('');save()}return state.reportId}
-function logAttempt(t,response,correct){state.reportAttempts=state.reportAttempts||[];state.reportAttempts.push({mode,question:index,skill:t.skill||'',word:t.v?.en||'',response:String(response).slice(0,t.extendedGrammar?500:80),correct:!!correct,at:new Date().toISOString()});save()}
+function logAttempt(t,response,correct){state.reportAttempts=state.reportAttempts||[];state.reportAttempts.push({mode,question:index,skill:t.skill||'',word:t.v?.en||'',response:String(response).slice(0,t.extendedGrammar||t.vocabularyLab?500:80),correct:!!correct,at:new Date().toISOString()});save()}
 function logSupport(type){state.supportEvents=state.supportEvents||[];state.supportEvents.push({mode,question:index,type,time:new Date().toISOString()});save()}
 function logCompletion(t,firstTry,result){state.reportCompletions=state.reportCompletions||[];const correct=result==='correct';state.reportCompletions.push({mode,question:index,word:t.v?.en||'',skill:t.skill||'',firstTry:correct&&!!firstTry,correct,result:result||'incorrect',attempts:attempts||0,hints,at:new Date().toISOString()});save()}
-function reportRows(){let modes=['diagnostic','vocab','grammar','skills','reading','challenge','review','advanced'];return modes.map(m=>{let a=(state.reportAttempts||[]).filter(x=>x.mode===m),c=(state.reportCompletions||[]).filter(x=>x.mode===m),sup=(state.supportEvents||[]).filter(x=>x.mode===m);let unique=new Map(c.map(x=>[x.question,x]));let latest=[...unique.values()];return {mode:m,completed:latest.length,firstTry:latest.filter(x=>x.firstTry).length,attempts:a.length,wrong:a.filter(x=>!x.correct).length,hints:sup.filter(x=>x.type==='hint').length,catalan:sup.filter(x=>x.type==='catalan').length,models:sup.filter(x=>x.type==='model').length}})}
+function reportRows(){let modes=['diagnostic','vocab','grammar','skills','reading','challenge','review','advanced'];return modes.map(m=>{let a=(state.reportAttempts||[]).filter(x=>x.mode===m),c=(state.reportCompletions||[]).filter(x=>x.mode===m),sup=(state.supportEvents||[]).filter(x=>x.mode===m);let unique=new Map(c.map(x=>[x.activityId||x.question,x]));let latest=[...unique.values()];return {mode:m,completed:latest.length,firstTry:latest.filter(x=>x.firstTry).length,attempts:a.length,wrong:a.filter(x=>!x.correct).length,hints:sup.filter(x=>x.type==='hint').length,catalan:sup.filter(x=>x.type==='catalan').length,models:sup.filter(x=>x.type==='model').length}})}
 function downloadBlob(data,name,type){let blob=new Blob([data],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000)}
 function csvCell(v){return '"'+String(v??'').replace(/"/g,'""').replace(/^[=+@\-]/,'\u0027$&')+'"'}
 function downloadReportCSV(){let rows=reportRows(),header=['Section','Completed','First try','Attempts','Wrong attempts','Hints','Catalan help','Model answers'];let lines=[header,...rows.map(r=>[r.mode,r.completed,r.firstTry,r.attempts,r.wrong,r.hints,r.catalan,r.models])];downloadBlob('\ufeff'+lines.map(x=>x.map(csvCell).join(',')).join('\r\n'),reportId()+'-learning-report.csv','text/csv;charset=utf-8')}
@@ -663,12 +685,12 @@ function buildLearningReportHTML(){
  const totals=rows.reduce((o,r)=>{o.done+=r.completed;o.first+=r.firstTry;o.wrong+=r.wrong;o.hints+=r.hints;o.catalan+=r.catalan;return o},{done:0,first:0,wrong:0,hints:0,catalan:0});
  const names={diagnostic:'Quick Reading Check',vocab:'Vocabulary Lab',grammar:'First Conditional',skills:'Reading Skills',reading:'Reading Practice · CA1/CA2',challenge:'Reading Challenge',review:'Daily Review',advanced:'Advanced Reading'};
  const date=new Date().toLocaleString('en-GB');
- const pct=totals.done?Math.round(totals.first/totals.done*100):null;
- const latest=new Map();for(const c of completions)latest.set(c.mode+'|'+c.question,c);
- const needs=[...latest.values()].filter(c=>!c.firstTry).slice(-12);
+ const selfReviewedCount=completions.filter(c=>c.result==='self_reviewed').length;const gradedDone=Math.max(0,totals.done-selfReviewedCount);const pct=gradedDone?Math.round(totals.first/gradedDone*100):null;
+ const latest=new Map();for(const c of completions)latest.set(c.mode+'|'+(c.activityId||c.question),c);
+ const needs=[...latest.values()].filter(c=>!c.firstTry&&c.result!=='self_reviewed'&&c.result!=='alternative').slice(-12);
  const itemLabel=c=>c.word||((c.skill&&c.skill!=='CA2 · E/I/N')?c.skill+' · ':'')+'Question '+(Number(c.question)+1);
  const sections=rows.map(r=>'<tr><td><b>'+reportEscape(names[r.mode])+'</b></td><td>'+r.completed+'</td><td>'+r.firstTry+'</td><td>'+r.wrong+'</td><td>'+r.hints+'</td><td>'+r.catalan+'</td></tr>').join('');
- const needsHtml=needs.length?needs.map(c=>{let a=attempts.filter(x=>x.mode===c.mode&&x.question===c.question),wrong=a.filter(x=>!x.correct),last=wrong[wrong.length-1];return '<article class="mistake"><div class="mistake-head"><b>'+reportEscape(names[c.mode])+' · '+reportEscape(itemLabel(c))+'</b><span class="tag">Review</span></div><p class="small">'+(last?'Last recorded incorrect answer: <strong>'+reportEscape(last.response)+'</strong>. ':'')+'This item was not completed correctly on the first attempt.</p></article>'}).join(''):'<p class="muted">No completed items currently flagged for review.</p>';
+ const needsHtml=needs.length?needs.map(c=>{let a=attempts.filter(x=>x.mode===c.mode&&(c.activityId?x.activityId===c.activityId:x.question===c.question)),wrong=a.filter(x=>!x.correct),last=wrong[wrong.length-1];return '<article class="mistake"><div class="mistake-head"><b>'+reportEscape(names[c.mode])+' · '+reportEscape(itemLabel(c))+'</b><span class="tag">Review</span></div><p class="small">'+(last?'Last recorded incorrect answer: <strong>'+reportEscape(last.response)+'</strong>. ':'')+'This item was not completed correctly on the first attempt.</p></article>'}).join(''):'<p class="muted">No completed items currently flagged for review.</p>';
  const notStarted=rows.filter(r=>r.completed===0).map(r=>names[r.mode]);
  const suggestions=[];
  if(needs.length)suggestions.push('Revisit the '+new Set(needs.map(x=>names[x.mode])).size+' section(s) with items that were not solved on the first attempt.');
@@ -676,7 +698,7 @@ function buildLearningReportHTML(){
  if(rows.find(r=>r.mode==='grammar').completed===0)suggestions.push('Try First Conditional to practise real future possibilities.');
  if(!totals.done)suggestions.push('Complete an activity to see personalised learning evidence here.');
  const css=`*{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#edf3f7;color:#18344d;line-height:1.48}.page{max-width:850px;margin:26px auto;padding:30px;background:#fff;border-radius:17px;box-shadow:0 10px 32px #15314b16}.hero{background:#245887;color:#fff;padding:27px;border-radius:13px}.eyebrow{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:bold;opacity:.9}h1{font-size:29px;margin:7px 0 5px}h2{font-size:19px;margin:26px 0 13px}.meta{font-size:12px;opacity:.95}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}.stat{padding:15px;border:1px solid #d9e6ef;border-radius:12px;background:#f5f9fc}.stat strong{display:block;font-size:28px;color:#245887}.stat span{font-size:12px;color:#566d80}.track{height:10px;background:#e1eaf1;border-radius:20px;overflow:hidden}.track div{height:100%;background:#347ab1}.muted,.small{color:#536b7f;font-size:13px}.small{margin:8px 0 0}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid #e1e9ef}th{background:#eaf2f8;color:#244c70}.mistake{padding:14px;border:1px solid #dce7ef;background:#f7fafc;border-radius:11px;margin:9px 0;break-inside:avoid}.mistake-head{display:flex;gap:8px;align-items:center;justify-content:space-between}.tag{background:#fff0d8;color:#85520b;border-radius:18px;padding:4px 9px;font-size:11px}.next{border-left:5px solid #347ab1;background:#eff6fb;padding:16px;border-radius:7px}.next li{margin:8px 0}.note{font-size:12px;color:#526c80}.footer{font-size:11px;color:#607487;border-top:1px solid #e1e9ef;margin-top:28px;padding-top:12px}.print{display:block;margin:18px auto;background:#245887;color:white;border:0;padding:13px 20px;border-radius:9px;font-size:15px;cursor:pointer}@media(max-width:600px){.page{margin:0;padding:17px;border-radius:0}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:20px}h1{font-size:25px}}@media print{@page{size:A4;margin:13mm}body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{margin:0;padding:0;max-width:none;border-radius:0;box-shadow:none}.print{display:none}h2{break-after:avoid}tr,.stat,.mistake{break-inside:avoid}}`;
- return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Learning Report · '+reportEscape(id)+'</title><style>'+css+'.quick-explanation-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.quick-explanation-header button{margin:0}.quick-explanation-header strong{color:#17395a}#quickExplanation ol{padding-left:1.5rem}#quickExplanation li{margin:9px 0}#instructionMeaning{border:1px solid #bdd4e9;border-radius:12px;background:#eff6fd;padding:12px 16px;margin:10px 0}#instructionMeaning p{margin:5px 0}.instruction-term{cursor:pointer}.reading-resume-actions{margin:8px 0 0;gap:7px}.reading-resume-actions button{font-size:.82rem;padding:8px 10px} </style></head><body><button class="print" onclick="window.print()">Print / Save as PDF</button><main class="page"><header class="hero"><div class="eyebrow">Unit 2 · Around the World</div><h1>My Learning Report</h1><div>Your progress, strengths and next steps</div><p class="meta">Anonymous ID: <b>'+reportEscape(id)+'</b> · Generated: '+reportEscape(date)+'</p></header><section><h2>1. My learning snapshot</h2><div class="stats"><div class="stat"><strong>'+totals.done+'</strong><span>Activities completed</span></div><div class="stat"><strong>'+totals.first+'</strong><span>First-try successes</span></div><div class="stat"><strong>'+totals.hints+'</strong><span>Hints requested (not penalised)</span></div></div><p class="muted">'+(pct===null?'No completed activities yet.':'First-try success among recorded completions: '+pct+'%.')+' This is formative information, not a grade.</p><div class="track"><div style="width:'+(pct??0)+'%"></div></div></section><section><h2>2. My progress by section</h2><div class="table-wrap"><table><thead><tr><th>Section</th><th>Done</th><th>First try</th><th>Wrong attempts</th><th>Hints</th><th>Catalan help</th></tr></thead><tbody>'+sections+'</tbody></table></div><p class="note">A zero may mean an activity has not been attempted; it does not automatically indicate a learning difficulty. Optional Catalan help is not penalised.</p></section><section><h2>3. What I need to practise</h2>'+needsHtml+'</section><section><h2>4. My next steps</h2><div class="next"><b>Suggested next activities</b><ol>'+(suggestions.length?suggestions.map(x=>'<li>'+reportEscape(x)+'</li>').join(''):'<li>Continue practising and revisit difficult items in Daily Review.</li>')+'</ol></div></section><section><h2>5. Practice evidence · Student and teacher</h2><p class="muted">Incorrect attempts: <b>'+totals.wrong+'</b> · Optional Catalan help: <b>'+totals.catalan+'</b>. Sections with no recorded completions: '+reportEscape(notStarted.join(', ')||'None')+'.</p><p class="note">This report uses only information recorded by the current version of the application. Older records may not include the full question or the correct answer, so these are not invented. A question repeated in another session may be counted again in the attempt history.</p></section><footer class="footer">Anonymous formative report. No personal information requested. This report is not a secure examination record or a progress backup. Submit it through your school learning platform. Use the app’s progress export to move between devices.</footer></main></body></html>';
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Learning Report · '+reportEscape(id)+'</title><style>'+css+'.quick-explanation-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.quick-explanation-header button{margin:0}.quick-explanation-header strong{color:#17395a}#quickExplanation ol{padding-left:1.5rem}#quickExplanation li{margin:9px 0}#instructionMeaning{border:1px solid #bdd4e9;border-radius:12px;background:#eff6fd;padding:12px 16px;margin:10px 0}#instructionMeaning p{margin:5px 0}.instruction-term{cursor:pointer}.reading-resume-actions{margin:8px 0 0;gap:7px}.reading-resume-actions button{font-size:.82rem;padding:8px 10px} </style></head><body><button class="print" onclick="window.print()">Print / Save as PDF</button><main class="page"><header class="hero"><div class="eyebrow">Unit 2 · Around the World</div><h1>My Learning Report</h1><div>Your progress, strengths and next steps</div><p class="meta">Anonymous ID: <b>'+reportEscape(id)+'</b> · Generated: '+reportEscape(date)+'</p></header><section><h2>1. My learning snapshot</h2><div class="stats"><div class="stat"><strong>'+totals.done+'</strong><span>Activities completed</span></div><div class="stat"><strong>'+totals.first+'</strong><span>First-try successes</span></div><div class="stat"><strong>'+totals.hints+'</strong><span>Hints requested (not penalised)</span></div></div><p class="muted">'+(pct===null?'No completed activities yet.':'First-try success among automatically checked completions: '+pct+'%.')+' This is formative information, not a grade.</p><div class="track"><div style="width:'+(pct??0)+'%"></div></div></section><section><h2>2. My progress by section</h2><div class="table-wrap"><table><thead><tr><th>Section</th><th>Done</th><th>First try</th><th>Wrong attempts</th><th>Hints</th><th>Catalan help</th></tr></thead><tbody>'+sections+'</tbody></table></div><p class="note">A zero may mean an activity has not been attempted; it does not automatically indicate a learning difficulty. Optional Catalan help is not penalised.</p></section><section><h2>3. What I need to practise</h2>'+needsHtml+'</section><section><h2>4. My next steps</h2><div class="next"><b>Suggested next activities</b><ol>'+(suggestions.length?suggestions.map(x=>'<li>'+reportEscape(x)+'</li>').join(''):'<li>Continue practising and revisit difficult items in Daily Review.</li>')+'</ol></div></section><section><h2>5. Practice evidence · Student and teacher</h2><p class="muted">Incorrect attempts: <b>'+totals.wrong+'</b> · Optional Catalan help: <b>'+totals.catalan+'</b>. Sections with no recorded completions: '+reportEscape(notStarted.join(', ')||'None')+'.</p><p class="note">This report uses only information recorded by the current version of the application. Older records may not include the full question or the correct answer, so these are not invented. A question repeated in another session may be counted again in the attempt history.</p></section><footer class="footer">Anonymous formative report. No personal information requested. This report is not a secure examination record or a progress backup. Submit it through your school learning platform. Use the app’s progress export to move between devices.</footer></main></body></html>';
 }
 function downloadReportHTML(){downloadBlob(buildLearningReportHTML(),reportId()+'-learning-report.html','text/html;charset=utf-8')}
 function downloadReportPDF(){
@@ -1046,6 +1068,680 @@ function showActivityFeedback(){const box=$('feedback');if(box&&!box.classList.c
 const designCheck=check;check=function(){if(!$('next').classList.contains('hidden'))return;designCheck();showActivityFeedback();};
 const designHint=hint;hint=function(){designHint();showActivityFeedback();};
 const designModel=model;model=function(){designModel();if(!$('quickExplanation').classList.contains('hidden'))$('quickExplanation').scrollIntoView({block:'nearest',behavior:'auto'});else showActivityFeedback();};
+
+// Vocabulary Lab: short mixed sessions with separate evidence for recognition and recall.
+const vocabularyLabData={
+  "contexts": {
+    "art gallery": {
+      "sentences": [
+        "We went to the ___ to see an exhibition of modern paintings.",
+        "The ___ displayed sculptures and portraits by local artists."
+      ],
+      "distractors": [
+        "temple",
+        "market"
+      ]
+    },
+    "castle": {
+      "sentences": [
+        "The medieval ___ had thick defensive walls and towers.",
+        "Soldiers once defended the town from the walls of this ___."
+      ],
+      "distractors": [
+        "cathedral",
+        "shopping district"
+      ]
+    },
+    "cathedral": {
+      "sentences": [
+        "The bishop led a service in the city’s main church, the ___.",
+        "We visited the huge ___, the most important Christian church in the region."
+      ],
+      "distractors": [
+        "palace",
+        "market"
+      ]
+    },
+    "museum": {
+      "sentences": [
+        "The ___ displayed dinosaur bones and objects from ancient settlements.",
+        "At the history ___, we examined tools used thousands of years ago."
+      ],
+      "distractors": [
+        "art gallery",
+        "temple"
+      ]
+    },
+    "palace": {
+      "sentences": [
+        "The ruler welcomed guests to the grand royal residence, the ___.",
+        "The royal family’s magnificent home was a ___ with richly decorated reception rooms."
+      ],
+      "distractors": [
+        "market",
+        "cathedral"
+      ]
+    },
+    "temple": {
+      "sentences": [
+        "People left offerings at the Hindu ___.",
+        "We removed our shoes before entering the Buddhist ___."
+      ],
+      "distractors": [
+        "castle",
+        "aquarium"
+      ]
+    },
+    "market": {
+      "sentences": [
+        "At the open-air ___, stallholders sold vegetables and handmade baskets.",
+        "We bought fruit from a stall at the village ___."
+      ],
+      "distractors": [
+        "monument",
+        "tower"
+      ]
+    },
+    "natural wonder": {
+      "sentences": [
+        "This enormous waterfall formed without human construction: it is a ___.",
+        "The spectacular rock arch was shaped by nature, making it a ___."
+      ],
+      "distractors": [
+        "monument",
+        "palace"
+      ]
+    },
+    "safari park": {
+      "sentences": [
+        "We drove along the visitor route through the ___ and watched lions from our car.",
+        "At the ___, tourists stayed inside vehicles to observe large wild animals."
+      ],
+      "distractors": [
+        "amusement park",
+        "botanical gardens"
+      ]
+    },
+    "skyscraper": {
+      "sentences": [
+        "The office building had eighty floors: it was a ___.",
+        "From the top floor of the ___, the other city buildings looked tiny."
+      ],
+      "distractors": [
+        "ancient site",
+        "market"
+      ]
+    },
+    "aquarium": {
+      "sentences": [
+        "We watched sharks and jellyfish through the glass at the ___.",
+        "The ___ had large tanks displaying marine animals."
+      ],
+      "distractors": [
+        "cathedral",
+        "botanical gardens"
+      ]
+    },
+    "amusement park": {
+      "sentences": [
+        "We spent the day enjoying roller coasters and other rides at the ___.",
+        "The ___ had a big wheel, a roller coaster and a water ride."
+      ],
+      "distractors": [
+        "safari park",
+        "shopping district"
+      ]
+    },
+    "ancient site": {
+      "sentences": [
+        "Archaeologists were studying the ruined foundations at the ___.",
+        "At the ___, we could still see the remains of a settlement built long ago."
+      ],
+      "distractors": [
+        "skyscraper",
+        "aquarium"
+      ]
+    },
+    "botanical gardens": {
+      "sentences": [
+        "The ___ displayed labelled plants from many different climates.",
+        "We visited the ___ to learn about unusual flowers and trees."
+      ],
+      "distractors": [
+        "shopping district",
+        "safari park"
+      ]
+    },
+    "shopping district": {
+      "sentences": [
+        "This whole part of the city is full of shops: it is the ___.",
+        "We explored several streets in the ___, comparing clothes in different stores."
+      ],
+      "distractors": [
+        "natural wonder",
+        "national park"
+      ]
+    },
+    "bungee-jumping": {
+      "sentences": [
+        "I tried ___: I jumped from a bridge attached to an elastic cord.",
+        "During ___, the elastic rope stretched as the jumper fell towards the river."
+      ],
+      "distractors": [
+        "ziplining",
+        "parasailing"
+      ]
+    },
+    "canyoning": {
+      "sentences": [
+        "We went ___, climbing down rocks and swimming through a narrow gorge.",
+        "The ___ route involved walking, climbing and swimming along a rocky canyon."
+      ],
+      "distractors": [
+        "kayaking",
+        "mountain biking"
+      ]
+    },
+    "horse-riding": {
+      "sentences": [
+        "For our first ___ lesson, the instructor helped us sit safely on our horses.",
+        "We went ___ along the trail, each of us travelling on a horse."
+      ],
+      "distractors": [
+        "mountain biking",
+        "trekking"
+      ]
+    },
+    "kayaking": {
+      "sentences": [
+        "We went ___ in small narrow boats, using double-ended paddles.",
+        "During ___, I sat in a narrow boat and paddled across the lake."
+      ],
+      "distractors": [
+        "paddleboarding",
+        "scuba diving"
+      ]
+    },
+    "paddleboarding": {
+      "sentences": [
+        "We tried ___, standing on wide boards and moving with paddles.",
+        "While ___, I stood on a board rather than sitting inside a boat."
+      ],
+      "distractors": [
+        "kayaking",
+        "waterskiing"
+      ]
+    },
+    "parasailing": {
+      "sentences": [
+        "We went ___: a boat pulled us while parachutes lifted us into the air.",
+        "During ___, I floated beneath a parachute towed by a motorboat."
+      ],
+      "distractors": [
+        "bungee-jumping",
+        "ziplining"
+      ]
+    },
+    "ziplining": {
+      "sentences": [
+        "We tried ___, sliding along a high cable in harnesses.",
+        "During ___, the safety harness supported me as I travelled along the cable."
+      ],
+      "distractors": [
+        "parasailing",
+        "bungee-jumping"
+      ]
+    },
+    "scuba diving": {
+      "sentences": [
+        "We went ___ below the surface, breathing from air tanks.",
+        "For ___, we learnt to use breathing equipment while exploring underwater."
+      ],
+      "distractors": [
+        "kayaking",
+        "waterskiing"
+      ]
+    },
+    "waterskiing": {
+      "sentences": [
+        "We tried ___, standing on skis while a boat pulled us across the lake.",
+        "During ___, I balanced on two skis behind a motorboat."
+      ],
+      "distractors": [
+        "paddleboarding",
+        "parasailing"
+      ]
+    },
+    "white-water rafting": {
+      "sentences": [
+        "Our team went ___, travelling down rapids in an inflatable boat.",
+        "During ___, we paddled together in a large inflatable boat on a fast river."
+      ],
+      "distractors": [
+        "kayaking",
+        "canyoning"
+      ]
+    },
+    "mountain biking": {
+      "sentences": [
+        "We went ___, cycling along rough tracks in the hills.",
+        "Our ___ route followed rocky trails that were too rough for ordinary city bicycles."
+      ],
+      "distractors": [
+        "horse-riding",
+        "trekking"
+      ]
+    },
+    "sightseeing": {
+      "sentences": [
+        "We spent the morning ___, visiting the city’s famous monuments.",
+        "The guide took us ___ around the historic centre to see its main attractions."
+      ],
+      "distractors": [
+        "trekking",
+        "kayaking"
+      ]
+    },
+    "trekking": {
+      "sentences": [
+        "We went ___ for several days, walking long distances through the mountains.",
+        "Our ___ holiday involved long walks from one mountain hut to the next."
+      ],
+      "distractors": [
+        "mountain biking",
+        "horse-riding"
+      ]
+    },
+    "active": {
+      "sentences": [
+        "I wanted an ___ holiday, with plenty of movement and outdoor exercise.",
+        "Rather than sitting on the beach all week, we chose an ___ break full of sport."
+      ],
+      "distractors": [
+        "dull",
+        "relaxing"
+      ]
+    },
+    "challenging": {
+      "sentences": [
+        "The puzzle was ___: it tested our abilities and required several attempts.",
+        "Learning the new climbing technique was ___, but the challenge helped me improve."
+      ],
+      "distractors": [
+        "dull",
+        "slow"
+      ]
+    },
+    "dangerous": {
+      "sentences": [
+        "Swimming beside the waterfall was ___ because powerful currents could cause serious injury.",
+        "The guide stopped us because the damaged bridge was ___ and might collapse."
+      ],
+      "distractors": [
+        "relaxing",
+        "dull"
+      ]
+    },
+    "dull": {
+      "sentences": [
+        "I found the talk ___: nothing held my attention and I nearly fell asleep.",
+        "The long presentation was ___, with no interesting stories or activities."
+      ],
+      "distractors": [
+        "thrilling",
+        "scary"
+      ]
+    },
+    "expensive": {
+      "sentences": [
+        "The tour was too ___ for our budget, so we chose a cheaper one.",
+        "The hotel was ___: one night cost more than all our other nights together."
+      ],
+      "distractors": [
+        "slow",
+        "tiring"
+      ]
+    },
+    "relaxing": {
+      "sentences": [
+        "The quiet boat ride was ___: afterwards, I felt calm and rested.",
+        "A peaceful afternoon by the lake was ___ and helped me unwind."
+      ],
+      "distractors": [
+        "thrilling",
+        "challenging"
+      ]
+    },
+    "scary": {
+      "sentences": [
+        "I found the ghost story ___: I felt frightened and wanted the lights on.",
+        "The dark tunnel seemed ___ because I imagined something hiding inside."
+      ],
+      "distractors": [
+        "relaxing",
+        "dull"
+      ]
+    },
+    "slow": {
+      "sentences": [
+        "The boat was ___: it took an hour to travel just one kilometre.",
+        "The queue was so ___ that we waited ages to reach the entrance."
+      ],
+      "distractors": [
+        "active",
+        "expensive"
+      ]
+    },
+    "thrilling": {
+      "sentences": [
+        "The roller-coaster ride was ___: its sudden drops filled me with excitement.",
+        "The final race was ___, with an exciting finish that made everyone cheer."
+      ],
+      "distractors": [
+        "dull",
+        "relaxing"
+      ]
+    },
+    "tiring": {
+      "sentences": [
+        "The walk was ___: I enjoyed it, but needed a long rest afterwards.",
+        "Climbing all those steps was ___ and left us exhausted."
+      ],
+      "distractors": [
+        "dull",
+        "relaxing"
+      ]
+    },
+    "celebration": {
+      "sentences": [
+        "We organised a ___ to mark our grandmother’s hundredth birthday.",
+        "Winning the championship was a reason for a family ___."
+      ],
+      "distractors": [
+        "monument",
+        "tower"
+      ]
+    },
+    "festival": {
+      "sentences": [
+        "The town’s music ___ included concerts and performances over three days.",
+        "At the film ___, different directors presented their work throughout the week."
+      ],
+      "distractors": [
+        "parade",
+        "monument"
+      ]
+    },
+    "monument": {
+      "sentences": [
+        "The city built a stone ___ to remember those who had died.",
+        "The ___ in the square commemorates an important event in the country’s history."
+      ],
+      "distractors": [
+        "market",
+        "aquarium"
+      ]
+    },
+    "national park": {
+      "sentences": [
+        "The government protects the mountains and lakes in this ___ for their natural value.",
+        "We followed marked trails through the ___, a large protected natural landscape."
+      ],
+      "distractors": [
+        "shopping district",
+        "theme park"
+      ]
+    },
+    "parade": {
+      "sentences": [
+        "The ___ moved along the streets with marching bands and decorated vehicles.",
+        "Crowds watched the ___ as dancers and floats passed through the town."
+      ],
+      "distractors": [
+        "monument",
+        "palace"
+      ]
+    },
+    "theme park": {
+      "sentences": [
+        "The rides at the ___ all followed the same adventure-story theme.",
+        "Every attraction in the ___ was based on characters from the same film series."
+      ],
+      "distractors": [
+        "safari park",
+        "national park"
+      ]
+    },
+    "tower": {
+      "sentences": [
+        "We climbed the ___, a tall narrow structure beside the gate.",
+        "The bell rang from the ___, which rose much higher than it was wide."
+      ],
+      "distractors": [
+        "market",
+        "natural wonder"
+      ]
+    },
+    "wildlife reserve": {
+      "sentences": [
+        "In this ___, wild animals are protected in their natural habitat.",
+        "The ___ protects animals living freely in their own natural environment."
+      ],
+      "distractors": [
+        "amusement park",
+        "shopping district"
+      ]
+    }
+  },
+  "contrasts": [
+    {
+      "words": [
+        "castle",
+        "palace"
+      ],
+      "text": "Which word best fits a medieval building designed for defence, with thick protective walls?",
+      "ca": "Quina paraula descriu millor un edifici medieval dissenyat per defensar-se, amb murs protectors gruixuts?",
+      "answer": "castle",
+      "en": "Defensive walls are the key clue for castle. A palace is primarily a grand residence.",
+      "why": "Els murs defensius són la pista clau de castle. Un palace és principalment una residència sumptuosa."
+    },
+    {
+      "words": [
+        "dull",
+        "tiring"
+      ],
+      "text": "The walk was interesting, but left us needing a rest. Which adjective describes its effect?",
+      "ca": "La caminada era interessant, però ens va deixar amb necessitat de descansar. Quin adjectiu descriu l’efecte?",
+      "answer": "tiring",
+      "en": "Needing rest points to tiring. Dull means uninteresting.",
+      "why": "Necessitar descans indica tiring. Dull vol dir poc interessant."
+    },
+    {
+      "words": [
+        "scary",
+        "dangerous"
+      ],
+      "text": "A fictional ghost story frightens you while you sit safely at home. Which word best describes the story?",
+      "ca": "Una història fictícia de fantasmes et fa por mentre seus segur a casa. Quina paraula descriu millor la història?",
+      "answer": "scary",
+      "en": "The story causes fear, so it is scary. Dangerous concerns a risk of harm.",
+      "why": "La història provoca por: és scary. Dangerous fa referència a un risc de patir danys."
+    },
+    {
+      "words": [
+        "kayaking",
+        "paddleboarding"
+      ],
+      "text": "You stand on a board and move with a paddle. Which activity is this?",
+      "ca": "Estàs dret sobre una taula i avances amb un rem. Quina activitat és?",
+      "answer": "paddleboarding",
+      "en": "Standing on a board distinguishes paddleboarding from sitting in a kayak.",
+      "why": "Estar dret sobre una taula diferencia paddleboarding de seure en un caiac."
+    },
+    {
+      "words": [
+        "museum",
+        "art gallery"
+      ],
+      "text": "The exhibition contains only contemporary paintings and sculptures. Which place is the more specific match?",
+      "ca": "L’exposició només conté pintures i escultures contemporànies. Quin lloc és l’opció més específica?",
+      "answer": "art gallery",
+      "en": "Art gallery is the more specific term for a space devoted to works of art; museum has a broader range.",
+      "why": "Art gallery és el terme més específic per a un espai dedicat a obres d’art; museum té un abast més ampli."
+    },
+    {
+      "words": [
+        "bungee-jumping",
+        "ziplining"
+      ],
+      "text": "You jump down from a bridge attached to an elastic cord. Which activity is this?",
+      "ca": "Saltes d’un pont subjectat a una corda elàstica. Quina activitat és?",
+      "answer": "bungee-jumping",
+      "en": "An elastic cord and downward jump distinguish bungee-jumping from travelling along a cable.",
+      "why": "La corda elàstica i el salt cap avall diferencien bungee-jumping de desplaçar-se per un cable."
+    },
+    {
+      "words": [
+        "amusement park",
+        "theme park"
+      ],
+      "text": "The question asks for the more specific name: all the rides are based on one film series. Which term fits best?",
+      "ca": "Es demana el nom més específic: totes les atraccions es basen en una mateixa saga de pel·lícules. Quin terme encaixa millor?",
+      "answer": "theme park",
+      "en": "Both places can have rides, but the shared story theme makes theme park the more specific name.",
+      "why": "Tots dos llocs poden tenir atraccions, però el tema narratiu comú fa que theme park sigui el nom més específic."
+    },
+    {
+      "words": [
+        "festival",
+        "parade"
+      ],
+      "text": "Decorated vehicles and marching bands move together along the streets. Which event is described?",
+      "ca": "Vehicles decorats i bandes de música avancen plegats pels carrers. Quin esdeveniment es descriu?",
+      "answer": "parade",
+      "en": "The procession moving along the streets defines a parade. A festival may include one, but is a broader event.",
+      "why": "La comitiva que avança pels carrers defineix una parade. Un festival en pot incloure una, però és un esdeveniment més ampli."
+    }
+  ]
+};
+const labShuffle=items=>{const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const labNorm=s=>norm(s).replace(/-/g,' ').replace(/\s+/g,' ').trim();
+function isVocabularyLab(){return mode==='vocab'&&tasks[index]?.vocabularyLab;}
+function labDraft(){const t=tasks[index];return state.vocabSession.drafts[t.id]||(state.vocabSession.drafts[t.id]={value:'',attempts:0,hints:0,chosen:[],matched:[],pairErrors:{},selfChecks:[]});}
+function labSave(){if(!isVocabularyLab())return;const draft=labDraft();draft.attempts=attempts;draft.hints=hints;save();}
+function labUI(node,en,ca){node.dataset.labEn=en;node.dataset.labCa=ca;node.textContent=isCatalan()?ca:en;return node;}
+function labFeedback(en,ca,kind=''){const f=$('feedback');f.dataset.labEn=en;f.dataset.labCa=ca;const draft=labDraft();draft.feedback=[en,ca,kind];feedback(en,kind);labSave();}
+function labMeaning(word,ca){return ca?vocabularyDefinitionCa[word]:wordDefinitions[word];}
+function makeVocabularySession(resume){
+ if(resume&&state.vocabSession?.version===1&&!state.vocabSession.completed){for(const t of state.vocabSession.tasks){guidanceTranslations[t.q]=t.qCa;promptPairs[t.q]=t.qCa;}return state.vocabSession.tasks;}
+ const last=new Set(state.vocabLastWords||[]);let used=state.vocabCycleUsed||[];
+ if(vocab.every(v=>used.includes(v.en)))used=[];
+ const rank=v=>{const c=state.cards[v.en];return !c?.seen?3:!(c.n>0)?5:c.due<=Date.now()?4:1;};
+ let pool=labShuffle(vocab).sort((a,b)=>Number(used.includes(a.en))-Number(used.includes(b.en))||Number(last.has(a.en))-Number(last.has(b.en))||rank(b)-rank(a));
+ const main=pool.slice(0,8),chosen=new Set(main.map(v=>v.en));
+ const compound=pool.find(v=>/[ -]/.test(v.en)&&!chosen.has(v.en))||pool.find(v=>/[ -]/.test(v.en));chosen.add(compound.en);
+ const contrastIndex=(state.vocabContrastCursor||0)%vocabularyLabData.contrasts.length;state.vocabContrastCursor=contrastIndex+1;
+ const contrast=vocabularyLabData.contrasts[contrastIndex];const contrastWord=vocab.find(v=>v.en===contrast.answer);chosen.add(contrastWord.en);
+ const matchSeed=pool.find(v=>!chosen.has(v.en));const matchWords=[matchSeed,...labShuffle(vocab.filter(v=>v.category===matchSeed.category&&v.en!==matchSeed.en&&!chosen.has(v.en))).slice(0,3)];
+ while(matchWords.length<4){const other=pool.find(v=>!matchWords.some(x=>x.en===v.en));matchWords.push(other);}
+ const list=[];
+ function task(kind,v){const retrieval=kind==='definition'||kind==='contextRecall';const t={type:'vocabularyPractice',vocabularyLab:true,kind,v,id:'vl-'+Date.now()+'-'+list.length+'-'+Math.random().toString(36).slice(2,7),opts:[],skill:'Vocabulary · '+(retrieval?'Independent recall':kind==='production'?'Self-review':'Recognition'),evidenceType:retrieval?'retrieval':kind==='production'?'self_review':'recognition'};
+ const q={definition:['Read the definition and write the English word or expression.','Llegeix la definició i escriu la paraula o expressió en anglès.'],contextRecall:['Complete the sentence with a word or expression from the unit.','Completa la frase amb una paraula o expressió de la unitat.'],choice:['Choose the word or expression that fits this situation.','Tria la paraula o expressió que encaixa en aquesta situació.'],contrast:['Compare the meanings and choose the more precise word.','Compara els significats i tria la paraula més precisa.'],rebuild:['Build the complete expression. Tap the pieces to add or remove them.','Construeix l’expressió completa. Toca les peces per afegir-les o retirar-les.'],match:['Match each word with its definition. Select a word, then a meaning.','Relaciona cada paraula amb la definició. Tria una paraula i després un significat.'],production:['Write one travel sentence, then review it yourself.','Escriu una frase sobre un viatge i després revisa-la tu mateix.']}[kind];[t.q,t.qCa]=q;guidanceTranslations[t.q]=t.qCa;promptPairs[t.q]=t.qCa;
+ if(kind==='contextRecall'||kind==='choice'){state.vocabContextVisits=state.vocabContextVisits||{};const visit=state.vocabContextVisits[v.en]||0;state.vocabContextVisits[v.en]=visit+1;t.context=vocabularyLabData.contexts[v.en].sentences[visit%2];if(kind==='choice'){t.opts=labShuffle([v.en,...vocabularyLabData.contexts[v.en].distractors]);t.a=t.opts.indexOf(v.en);}}
+ list.push(t);return t;}
+ // Interleave recognition and retrieval rather than repeating one format 46 times.
+ task('definition',main[0]);task('choice',main[1]);task('contextRecall',main[2]);
+ const mt=task('match',matchSeed);mt.words=matchWords;mt.wordOrder=labShuffle(matchWords.map(v=>v.en));mt.meaningOrder=labShuffle(matchWords.map(v=>v.en));
+ task('definition',main[3]);const ct=task('contrast',contrastWord);ct.context=contrast.text;ct.contextCa=contrast.ca;ct.opts=labShuffle(contrast.words);ct.a=ct.opts.indexOf(contrast.answer);ct.reason=[contrast.en,contrast.why];
+ task('contextRecall',main[4]);const rt=task('rebuild',compound);rt.tokens=compound.en.split(/[ -]+/);rt.pool=labShuffle(rt.tokens.map((_,i)=>i));if(rt.pool.every((v,i)=>v===i))rt.pool.reverse();
+ task('choice',main[5]);task('definition',main[6]);task('contextRecall',main[7]);task('production',main[7]);
+ const allWords=[...chosen,...matchWords.map(v=>v.en)];state.vocabCycleUsed=[...new Set([...used,...allWords])];state.vocabLastWords=allWords;
+ state.vocabSession={version:1,tasks:list,drafts:{},completed:false};state.sessions=state.sessions||{};state.sessions.vocab=0;save();return list;
+}
+function renderLabChoices(box,t,draft){for(const option of t.opts){const label=document.createElement('label');label.className='choice';const radio=document.createElement('input');radio.type='radio';radio.name='labChoice';radio.value=option;radio.checked=draft.value===option;radio.disabled=!!draft.done;radio.onchange=()=>{draft.value=option;labSave();};label.append(radio,document.createTextNode(option));if(draft.done&&radio.checked)label.classList.add(option===t.v.en?'answer-correct':'answer-incorrect');box.append(label);}}
+function drawLabTiles(box,t,draft){const answer=document.createElement('div');answer.className='lab-built';answer.setAttribute('aria-live','polite');answer.dataset.labEmpty='yes';if(!draft.chosen.length)labUI(answer,'Tap the pieces below to build the expression.','Toca les peces de sota per construir l’expressió.');
+ for(const id of draft.chosen){const b=document.createElement('button');b.type='button';b.className='secondary lab-tile';b.textContent=t.tokens[id];b.disabled=!!draft.done;b.onclick=()=>{draft.chosen=draft.chosen.filter(x=>x!==id);labSave();renderVocabularyLab();document.querySelector('[data-lab-token="'+id+'"]')?.focus({preventScroll:true});};answer.append(b);}
+ const pool=document.createElement('div');pool.className='lab-tiles';for(const id of t.pool){const b=document.createElement('button');b.type='button';b.className='secondary lab-tile';b.dataset.labToken=id;b.textContent=t.tokens[id];b.disabled=!!draft.done||draft.chosen.includes(id);b.onclick=()=>{draft.chosen.push(id);labSave();renderVocabularyLab();(document.querySelector('.lab-tiles button:not(:disabled)')||document.querySelector('.lab-built button:last-child'))?.focus({preventScroll:true});};pool.append(b);}box.append(answer,pool);}
+function labPairs(t,draft,support=false){const group=support?draft.support:t;const progress=support?draft.supportProgress:draft;const panel=document.createElement('div');panel.className='lab-pairs';
+ const columns=[document.createElement('div'),document.createElement('div')];columns.forEach(c=>c.className='lab-match-column');
+ for(const word of group.wordOrder){const b=document.createElement('button');b.type='button';b.className='secondary lab-match-word';b.textContent=word;b.disabled=progress.matched.includes(word)||!!draft.done;if(progress.active===word){b.classList.add('selected');b.setAttribute('aria-pressed','true');}else b.setAttribute('aria-pressed','false');b.onclick=()=>{progress.active=word;labSave();renderVocabularyLab();document.querySelector('.lab-match-meaning:not(:disabled)')?.focus({preventScroll:true});};columns[0].append(b);}
+ for(const word of group.meaningOrder){const b=document.createElement('button');b.type='button';b.className='secondary lab-match-meaning';labUI(b,labMeaning(word,false),labMeaning(word,true));b.disabled=progress.matched.includes(word)||!!draft.done||!progress.active;b.onclick=()=>{
+ const selected=progress.active;if(!selected)return;const correct=selected===word;
+ if(!support){logAttempt(t,selected+' => '+word,correct);attempts++;}
+ if(correct){progress.matched.push(selected);progress.active=null;labFeedback('Matched: '+selected+' — '+labMeaning(selected,false),'Relacionat'+': '+selected+' — '+labMeaning(selected,true),'good');}
+ else{progress.pairErrors[selected]=(progress.pairErrors[selected]||0)+1;if(!support)draft.pairMistakes=(draft.pairMistakes||0)+1;if(progress.pairErrors[selected]>=2){progress.autoSolved=progress.autoSolved||[];progress.autoSolved.push(selected);progress.matched.push(selected);progress.active=null;progress.assisted=true;labFeedback('Review this pair: '+selected+' — '+labMeaning(selected,false),'Revisa aquesta parella: '+selected+' — '+labMeaning(selected,true),'warn');}else labFeedback('That meaning does not match the selected word. Compare its definition and try again.','Aquest significat no correspon a la paraula seleccionada. Compara’n la definició i torna-ho a provar.','warn');}
+ if(progress.matched.length===group.words.length){if(support){draft.support=null;draft.supportProgress=null;draft.supportCompleted=true;draft.value='';labFeedback('Now write the target word from memory, without the matching options.','Ara escriu la paraula objectiu de memòria, sense les opcions de relacionar.');}else{labComplete('correct',!draft.assisted&&!draft.pairMistakes&&hints===0);return;}}
+ labSave();renderVocabularyLab();};columns[1].append(b);}
+ panel.append(...columns);return panel;}
+function renderVocabularyLab(){$('vocabPopup')?.remove();$('vocabNote')?.remove();const t=tasks[index],draft=labDraft(),a=$('answers');attempts=draft.attempts||0;hints=draft.hints||0;selection='';a.replaceChildren();
+ $('instruction').before($('question'));$('question').classList.remove('after-passage');$('question').textContent=isCatalan()?t.qCa:t.q;
+ const names={definition:['Recall · Definition','Recuperació · Definició'],contextRecall:['Recall · New context','Recuperació · Context nou'],choice:['Recognition · Context','Reconeixement · Context'],contrast:['Recognition · Precise meanings','Reconeixement · Precisió'],rebuild:['Supported recognition · Expression','Reconeixement amb suport · Expressió'],match:['Recognition · Match meanings','Reconeixement · Relaciona significats'],production:['Self-review · Use the word','Autorevisió · Utilitza la paraula']};
+ labUI($('instruction'),...names[t.kind]);$('instruction').classList.remove('hidden');
+ const box=document.createElement('div');box.className='panel lab-panel';a.append(box);
+ if(t.kind==='definition'){
+  renderVocabularyDefinition(t);const definition=$('question').querySelector('.vocab-definition');definition.classList.add('lab-context');box.append(definition);$('question').textContent=isCatalan()?t.qCa:t.q;
+ }else if(t.context){const context=document.createElement('p');context.className='lab-context';if(t.contextCa)labUI(context,t.context,t.contextCa);else context.textContent=t.context;box.append(context);}
+ if(['definition','contextRecall','production'].includes(t.kind)){
+  const label=document.createElement('label');label.className='lab-input-label';const caption=document.createElement('span');labUI(caption,t.kind==='production'?'Your sentence':'Your word or expression',t.kind==='production'?'La teva frase':'La teva paraula o expressió');label.append(caption);
+  if(t.kind==='production'){const target=document.createElement('p');target.className='lab-target';target.textContent=t.v.en;box.append(target);const help=document.createElement('p');help.className='tiny';labUI(help,'Use the displayed word in a travel sentence. Explain a choice, experience or preference.','Utilitza la paraula indicada en una frase sobre viatges. Explica una tria, experiència o preferència.');box.append(help);}
+  const field=document.createElement(t.kind==='production'?'textarea':'input');if(t.kind!=='production')field.type='text';else{field.rows=3;field.maxLength=500;}field.className='lab-answer';field.autocomplete='off';field.spellcheck=false;field.value=draft.value;field.disabled=!!draft.done;field.oninput=()=>{draft.value=field.value;labSave();};field.onkeydown=e=>{if(e.key==='Enter'&&(field.tagName==='INPUT'||e.ctrlKey||e.metaKey)){e.preventDefault();check();}};label.append(field);box.append(label);
+  if(t.kind==='production'){
+   const checks=[['I used the displayed word with the intended meaning.','He utilitzat la paraula indicada amb el significat adequat.'],['My sentence has a subject and a verb.','La frase té subjecte i verb.'],['I reread the spelling and explained my idea.','He revisat l’ortografia i he explicat la meva idea.']];checks.forEach((pair,i)=>{const lab=document.createElement('label');lab.className='lab-self-check';const input=document.createElement('input');input.type='checkbox';input.checked=!!draft.selfChecks[i];input.disabled=!!draft.done;input.onchange=()=>{draft.selfChecks[i]=input.checked;labSave();};const text=document.createElement('span');labUI(text,...pair);lab.append(input,text);box.append(lab);});const note=document.createElement('p');note.className='tiny';labUI(note,'This sentence is self-reviewed, not automatically graded.','Aquesta frase és d’autorevisió; no rep una correcció automàtica.');box.append(note);
+  }
+ }else if(t.kind==='choice'||t.kind==='contrast')renderLabChoices(box,t,draft);
+ else if(t.kind==='rebuild')drawLabTiles(box,t,draft);
+ else if(t.kind==='match')box.append(labPairs(t,draft));
+ if(draft.support){const aside=document.createElement('div');aside.className='lab-support';const title=document.createElement('h3');labUI(title,'Practise the meanings, then recall the word','Practica els significats i després recupera la paraula');aside.append(title,labPairs(t,draft,true));box.append(aside);}
+ if(draft.offerSupport&&!draft.support&&!draft.supportCompleted&&!draft.done){const support=document.createElement('button');support.type='button';support.className='secondary';labUI(support,'Practise with meanings','Practica amb els significats');support.onclick=()=>{hints++;logSupport('matching');const others=labShuffle(vocab.filter(v=>v.en!==t.v.en&&v.category===t.v.category)).slice(0,2);const words=[t.v,...others];draft.support={words,wordOrder:labShuffle(words.map(v=>v.en)),meaningOrder:labShuffle(words.map(v=>v.en))};draft.supportProgress={matched:[],pairErrors:{}};labSave();renderVocabularyLab();};box.append(support);}
+ $('check').classList.toggle('hidden',!!draft.done||t.kind==='match'||!!draft.support);$('modelbtn').classList.toggle('hidden',t.kind==='production'||!!draft.support);$('hintbtn').classList.toggle('hidden',!!draft.done||!!draft.support);$('next').classList.toggle('hidden',!draft.done);
+ labUI($('check'),t.kind==='production'?'Save my self-review':'Check my answer',t.kind==='production'?'Desa l’autorevisió':'Comprova la resposta');$('hintbtn').disabled=hints>=3;
+ if(draft.feedback){const [en,ca,kind]=draft.feedback;const f=$('feedback');f.dataset.labEn=en;f.dataset.labCa=ca;feedback(en,kind);}else $('feedback').classList.add('hidden');
+ if(draft.done)checkedCorrect=draft.result==='correct';translateGuidance();
+}
+function labRecordEvidence(t,result,independent){
+ state.vocabEvidence=state.vocabEvidence||{};const words=t.kind==='match'?t.words:[t.v];
+ for(const v of words){const e=state.vocabEvidence[v.en]||(state.vocabEvidence[v.en]={recognition:0,retrieval:0,independent:0,selfReviews:0});const card=state.cards[v.en]||(state.cards[v.en]={n:0});card.seen=true;
+ if(t.evidenceType==='recognition'){if(result==='correct'&&!(labDraft().autoSolved||[]).includes(v.en))e.recognition++;if(!card.n||result!=='correct')card.due=Date.now();}
+ else if(t.evidenceType==='retrieval'){e.retrieval++;if(result==='correct'&&independent)e.independent++;spellingDetected=false;recordWord(v,result==='correct'&&independent);}
+ else e.selfReviews++;
+ }
+}
+function labComplete(result,firstTry){const t=tasks[index],draft=labDraft();if(draft.done)return;draft.done=true;draft.result=result;labRecordEvidence(t,result,firstTry&&t.evidenceType==='retrieval');finish(firstTry,result);
+ const completion=state.reportCompletions.at(-1);if(result==='alternative')completion.correct=true;Object.assign(completion,{evidenceType:t.evidenceType,activity:t.kind,activityId:t.id,independentRecall:result==='correct'&&firstTry&&t.evidenceType==='retrieval',selfReview:result==='self_reviewed'});labSave();renderVocabularyLab();}
+function checkVocabularyLab(){const t=tasks[index],draft=labDraft();if(draft.done||draft.support)return;
+ if(t.kind==='production'){if(!draft.value.trim()||draft.selfChecks.filter(Boolean).length!==3){labFeedback('Write your sentence and complete the three self-review checks before saving.','Escriu la frase i completa les tres comprovacions d’autorevisió abans de desar-la.');return;}attempts=1;labFeedback('Self-review saved. Your sentence has not been automatically graded.','Autorevisió desada. La frase no ha estat qualificada automàticament.');labComplete('self_reviewed',false);return;}
+ const response=t.kind==='rebuild'?draft.chosen.map(i=>t.tokens[i]).join(' '):draft.value.trim();
+ if(!response||(t.kind==='rebuild'&&draft.chosen.length!==t.tokens.length)){labFeedback('Complete the answer before checking. This does not count as an attempt.','Completa la resposta abans de comprovar-la. Això no compta com a intent.');return;}
+ const correct=labNorm(response)===labNorm(t.v.en);const validAlternatives=[...(aliases[t.v.en]||[]),...(t.v.en==='theme park'?['amusement park']:t.v.en==='amusement park'?['theme park']:[])];const validAlternative=t.evidenceType==='retrieval'&&validAlternatives.some(a=>labNorm(a)===labNorm(response));logAttempt(t,response,correct||validAlternative);attempts++;
+ if(correct){const explanation=t.reason||[t.v.en+' — '+labMeaning(t.v.en,false),t.v.en+' — '+labMeaning(t.v.en,true)];labFeedback('Correct! '+explanation[0],'Correcte! '+explanation[1],'good');labComplete('correct',attempts===1&&hints===0);return;}
+ const alternatives=[...(aliases[t.v.en]||[]),...(t.v.en==='theme park'?['amusement park']:t.v.en==='amusement park'?['theme park']:[])];
+ if(t.evidenceType==='retrieval'&&alternatives.some(a=>labNorm(a)===labNorm(response))){labFeedback('Your answer is a valid alternative, not a language mistake. The unit’s target expression is '+t.v.en+'. We will review it again.','La resposta és una alternativa vàlida, no un error lingüístic. L’expressió objectiu de la unitat és '+t.v.en+'. La tornarem a repassar.','good');labComplete('alternative',false);return;}
+ let advice=['Compare the situation with each word’s meaning.','Compara la situació amb el significat de cada paraula.'];
+ if(t.evidenceType==='retrieval'){const typo=detectSpelling(labNorm(response),labNorm(t.v.en));advice=typo?['Your answer is close: check the spelling before changing the word.','La resposta és propera: comprova l’ortografia abans de canviar de paraula.']:['Re-read the definition or sentence. Try a hint or the meaning practice before answering again.','Rellegeix la definició o frase. Prova una pista o la pràctica de significats abans de tornar a respondre.'];draft.offerSupport=true;}
+ else if(t.kind==='rebuild')advice=['Check the order of all the pieces. The complete expression must use every piece.','Comprova l’ordre de totes les peces. L’expressió completa ha d’utilitzar-les totes.'];
+ else if(wordDefinitions[response])advice=[response+' means '+labMeaning(response,false)+'. Compare this meaning with the situation.',response+' significa '+labMeaning(response,true)+'. Compara aquest significat amb la situació.'];
+ if(attempts>=2){labFeedback('You have used both attempts. Target expression: '+t.v.en+' — '+labMeaning(t.v.en,false),'Has utilitzat els dos intents. Expressió objectiu: '+t.v.en+' — '+labMeaning(t.v.en,true),'warn');labComplete('incorrect',false);}
+ else{labFeedback('Not quite. '+advice[0]+' You have one attempt left.','Encara no és correcte. '+advice[1]+' Et queda un intent.','warn');labSave();renderVocabularyLab();}
+}
+const oldLabStart=start;start=function(m,resume){return oldLabStart(m,resume);};
+const oldLabRender=render;render=function(){oldLabRender();if(isVocabularyLab())renderVocabularyLab();else if(mode==='vocab'&&index>=tasks.length&&state.vocabSession){state.vocabSession.completed=true;save();}};
+const oldLabCheck=check;check=function(){if(isVocabularyLab()){const keyboard=document.activeElement?.classList.contains('lab-answer');checkVocabularyLab();showActivityFeedback();if(keyboard&&!labDraft().done)document.querySelector('.lab-answer')?.focus({preventScroll:true});return;}return oldLabCheck();};
+const oldLabHint=hint;hint=function(){if(!isVocabularyLab())return oldLabHint();const t=tasks[index],draft=labDraft();if(draft.done||hints>=3||draft.support)return;hints++;logSupport('hint');let pair;
+ if(t.evidenceType==='retrieval')pair=[vocabularyHintSets[t.v.en][hints-1],vocabularyHintSetsCa[t.v.en][hints-1]];
+ else if(t.kind==='production')pair=[['Describe a place, an activity or how a visit felt.','Descriu un lloc, una activitat o com va ser una visita.'],['Check that the sentence has a subject and a verb.','Comprova que la frase tingui subjecte i verb.'],['Include a reason using because, then reread the spelling.','Inclou una raó amb because i després revisa l’ortografia.']][hints-1];
+ else pair=[['Read the whole situation or definition, not just one familiar word.','Llegeix tota la situació o definició, no només una paraula coneguda.'],['Look for the detail that distinguishes the alternatives or parts of the expression.','Busca el detall que diferencia les alternatives o les parts de l’expressió.'],['Compare each meaning carefully. Eliminate an option only when a specific detail rules it out.','Compara acuradament els significats. Descarta una opció només quan un detall concret l’exclogui.']][hints-1];
+ labFeedback('Hint '+hints+' of 3: '+pair[0],'Pista '+hints+' de 3: '+pair[1]);labSave();renderVocabularyLab();showActivityFeedback();};
+const oldLabModel=model;model=function(){if(!isVocabularyLab())return oldLabModel();const t=tasks[index],draft=labDraft();if(t.kind==='production')return;logSupport('model');const words=t.kind==='match'?t.words:[t.v];labFeedback('Explanation:\n'+words.map(v=>v.en+' — '+labMeaning(v.en,false)).join('\n'),'Explicació:\n'+words.map(v=>v.en+' — '+labMeaning(v.en,true)).join('\n'));if(!draft.done)labComplete('revealed',false);else{labSave();renderVocabularyLab();}showActivityFeedback();};
+const oldLabTranslate=translateGuidance;translateGuidance=function(){oldLabTranslate();if(!isVocabularyLab())return;for(const el of document.querySelectorAll('#answers [data-lab-en],#instruction[data-lab-en],#check[data-lab-en]'))el.textContent=el.dataset[isCatalan()?'labCa':'labEn'];};
+const oldLabFeedback=unifiedFeedback;unifiedFeedback=function(original,ca){if(isVocabularyLab())return $('feedback').dataset[ca?'labCa':'labEn']||original;return oldLabFeedback(original,ca);};
+const oldLabResumes=showResumes;showResumes=function(){oldLabResumes();const card=document.querySelector('.journey-vocab');if(!card)return;let summary=$('labEvidenceSummary');if(!summary){summary=document.createElement('p');summary.id='labEvidenceSummary';summary.className='tiny';$('vocabActions').before(summary);}const recalled=vocab.filter(v=>state.cards[v.en]?.n>0).length;summary.textContent='Independently recalled: '+recalled+' / '+vocab.length+'. Matching and word choices are recorded separately.';
+ if(state.vocabSession?.version===1&&!state.vocabSession.completed&&state.sessions?.vocab!==undefined){const button=$('vocabActions').querySelector('button');button.textContent='Continue Vocabulary Lab · activity '+(Number(state.sessions.vocab)+1)+' of 12 →';button.onclick=()=>start('vocab',true);for(const other of [...$('vocabActions').querySelectorAll('button')].slice(1))other.remove();const fresh=document.createElement('button');fresh.type='button';fresh.className='lab-new-session';fresh.textContent='New session';fresh.setAttribute('aria-label','Start a new varied Vocabulary Lab session');fresh.onclick=()=>restartSection('vocab');$('vocabActions').append(fresh);}
+};
+const oldLabReport=buildLearningReportHTML;buildLearningReportHTML=function(){const html=oldLabReport();const entries=Object.values(state.vocabEvidence||{});const recognition=entries.reduce((n,e)=>n+e.recognition,0),recall=entries.reduce((n,e)=>n+e.independent,0),self=entries.reduce((n,e)=>n+e.selfReviews,0);return html.replace('<section><h2>3. What I need to practise</h2>','<section><h2>Vocabulary evidence</h2><p>Recognition successes: '+recognition+' · Independent recalls: '+recall+' · Self-reviews: '+self+'.</p><p>Recognition includes matching, choices and expressions built from visible pieces. It does not establish independent recall. Self-reviewed sentences are not automatically graded.</p></section><section><h2>3. What I need to practise</h2>');};
+if(state.vocabLabVersion!==1){if(state.sessions)delete state.sessions.vocab;state.vocabLabVersion=1;save();}
+
+
+const beforeLabAttempt=logAttempt;logAttempt=function(t,response,correct){beforeLabAttempt(t,response,correct);if(t.vocabularyLab){Object.assign(state.reportAttempts.at(-1),{activityId:t.id,evidenceType:t.evidenceType,activity:t.kind});save();}};
 
 stats();showResumes();applyGlobalCatalan();
 </script></body></html>
