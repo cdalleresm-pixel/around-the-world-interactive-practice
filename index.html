@@ -40,7 +40,24 @@
 #instructionMeaning{background:#eef5fa;border:1px solid #bed3e4;border-radius:12px;padding:13px 16px;margin:8px 0 15px;color:#193a59}
 #instructionMeaning .term-close{float:right;border:0;background:transparent;cursor:pointer;font-size:1.15rem}
 .reading-vocab .withheld{font-style:italic;color:#506a82}
-.quick-explanation-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.quick-explanation-header button{margin:0}.quick-explanation-header strong{color:#17395a}#quickExplanation ol{padding-left:1.5rem}#quickExplanation li{margin:9px 0}#instructionMeaning{border:1px solid #bdd4e9;border-radius:12px;background:#eff6fd;padding:12px 16px;margin:10px 0}#instructionMeaning p{margin:5px 0}.instruction-term{cursor:pointer}.reading-resume-actions{margin:8px 0 0;gap:7px}.reading-resume-actions button{font-size:.82rem;padding:8px 10px} </style></head><body><main><h1>Unit 2 · Around the World</h1><small style="color:#627891;font-size:.75rem">Version 8.9 · Independent reading texts</small><p class="sub">Vocabulary · First Conditional · Reading Comprehension</p><div class="app-tools"><button id="globalCatalan" class="secondary" type="button" aria-pressed="false" onclick="toggleGlobalCatalan()">Català: OFF</button></div><div class="stats" id="stats"></div><section id="home"><div class="panel journey-panel"><div class="journey-heading"><h2>Your learning journey</h2><p class="journey-intro">Follow the recommended order or choose the activity you need. All sections are available.</p></div><div class="journey-grid">
+.quick-explanation-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.quick-explanation-header button{margin:0}.quick-explanation-header strong{color:#17395a}#quickExplanation ol{padding-left:1.5rem}#quickExplanation li{margin:9px 0}#instructionMeaning{border:1px solid #bdd4e9;border-radius:12px;background:#eff6fd;padding:12px 16px;margin:10px 0}#instructionMeaning p{margin:5px 0}.instruction-term{cursor:pointer}.reading-resume-actions{margin:8px 0 0;gap:7px}.reading-resume-actions button{font-size:.82rem;padding:8px 10px} 
+/* A single visual unit owns both continuation and restart. */
+.reading-entry{min-width:0;display:flex;flex-direction:column;border:1px solid #d3e0ed;border-radius:14px;background:#f2f6fb;overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.reading-entry:hover{border-color:#a5bfda;box-shadow:0 3px 12px rgba(25,58,91,.06)}
+.reading-entry.in-progress{border-color:#a5c6e4;background:#eaf3fc}
+.reading-entry .reading-link{width:100%;flex:1;background:transparent;border:0;border-radius:0;box-shadow:none;margin:0;padding:18px;min-height:104px;transform:none;gap:16px}
+.reading-entry .reading-link:hover{background:rgba(255,255,255,.4);transform:none}
+.reading-entry .reading-link>span:last-child{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#dbe9f7;color:#214f79;font-size:1.3rem}
+.reading-entry .reading-link small{margin-top:7px;line-height:1.45}
+.reading-entry.in-progress .reading-link small{color:#2b5b85;font-weight:600}
+.reading-entry-progress{height:4px;margin:0 18px;background:#d4e1ee;border-radius:20px;overflow:hidden}
+.reading-entry-progress>span{display:block;height:100%;background:#4776a5;border-radius:20px}
+.reading-entry-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 12px 8px 18px;color:#596f85;font-size:.73rem;flex-wrap:wrap}
+.reading-entry-footer .reading-restart{background:transparent;border:0;color:#46627d;font-size:.75rem;font-weight:500;text-decoration:underline;text-underline-offset:3px;padding:10px 6px;min-height:40px;box-shadow:none;margin:0;border-radius:5px;cursor:pointer}
+.reading-entry-footer .reading-restart:hover{background:#dce9f5;color:#173a62}
+.reading-entry button:focus-visible{outline:3px solid #4776a5;outline-offset:-4px}
+@media(max-width:570px){.reading-entry .reading-link{min-height:88px;padding:16px}.reading-entry-progress{margin:0 16px}.reading-entry-footer{padding-left:16px}}
+</style></head><body><main><h1>Unit 2 · Around the World</h1><small style="color:#627891;font-size:.75rem">Version 8.9.2 · Compact reading navigation</small><p class="sub">Vocabulary · First Conditional · Reading Comprehension</p><div class="app-tools"><button id="globalCatalan" class="secondary" type="button" aria-pressed="false" onclick="toggleGlobalCatalan()">Català: OFF</button></div><div class="stats" id="stats"></div><section id="home"><div class="panel journey-panel"><div class="journey-heading"><h2>Your learning journey</h2><p class="journey-intro">Follow the recommended order or choose the activity you need. All sections are available.</p></div><div class="journey-grid">
 <article class="journey-card journey-vocab"><div class="journey-top"><span class="journey-step">01 · VOCABULARY</span><span class="journey-icon" aria-hidden="true">▤</span></div><h3>Vocabulary Lab</h3><p>Learn and practise 46 travel words.</p><div class="vocab-progress-label"><span id="vocabProgressText">0 of 46 words seen</span><span id="vocabProgressPercent">0%</span></div><div class="vocab-progress" role="progressbar" aria-label="Vocabulary words seen" aria-valuemin="0" aria-valuemax="46" aria-valuenow="0" id="vocabProgressBar"><div id="vocabProgressFill"></div></div><div class="journey-actions" id="vocabActions"><button onclick="start('vocab')">Start Vocabulary Lab →</button></div></article>
 <article class="journey-card"><div class="journey-top"><span class="journey-step">02 · GRAMMAR</span><span class="journey-icon" aria-hidden="true">✎</span></div><h3>First Conditional</h3><p>Explore possible future situations and their consequences.</p><div class="journey-actions" id="grammarActions"><button onclick="start('grammar')">Practise grammar →</button></div></article>
 <article class="journey-card journey-reading"><div class="journey-top"><span class="journey-step">03 · READING</span><span class="journey-icon" aria-hidden="true">▥</span></div><h3>Reading comprehension</h3><p>Learn strategies, apply them to texts and build confidence.</p><div class="reading-activities"><button class="reading-link" id="diagnosticLaunch" onclick="start('diagnostic')"><span><b>Quick Reading Check</b><small>Discover what you already know</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="skillsLaunch" onclick="start('skills')"><span><b>Reading Skills · Learn</b><small>Learn the strategies</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="readingLaunch" onclick="start('reading')"><span><b>Reading Practice · CA1/CA2</b><small>Practise assessment skills</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="challengeLaunch" onclick="start('challenge')"><span><b>Reading Challenge</b><small>Apply what you know</small></span><span aria-hidden="true">→</span></button><button class="reading-link" id="advancedLaunch" onclick="start('advanced')"><span><b>Advanced Reading</b><small>Optional extension for confident readers</small></span><span aria-hidden="true">→</span></button></div></article>
@@ -276,19 +293,34 @@ function showResumes(){
   main.onclick=()=>start(m,pos>0);holder.append(main);
   if(pos>0){const reset=document.createElement('button');reset.className='secondary';reset.textContent='Restart '+(m==='vocab'?'Vocabulary Lab':'First Conditional');reset.title='Restart this practice without deleting your learning history';reset.onclick=()=>restartSection(m);holder.append(reset)}
  }
- // Keep the original Reading activity links and add explicit resume/restart controls.
- for(const m of ['diagnostic','skills','reading','challenge','advanced']){
-  const launch=$(m+'Launch');if(!launch)continue;
-  const old=$(m+'ResumeActions');if(old)old.remove();
-  const pos=Number(state.sessions?.[m]||0);
-  if(pos<=0)continue;
-  const actions=document.createElement('div');actions.id=m+'ResumeActions';actions.className='journey-actions reading-resume-actions';
-  const resume=document.createElement('button');resume.className='secondary';resume.textContent='Continue '+({diagnostic:'Quick Reading Check',skills:'Reading Skills',reading:'Reading Practice',challenge:'Reading Challenge',advanced:'Advanced Reading'}[m])+' · step '+(pos+1);resume.onclick=()=>start(m,true);
-  const reset=document.createElement('button');reset.className='secondary';reset.textContent='Restart '+({diagnostic:'Quick Reading Check',skills:'Reading Skills',reading:'Reading Practice',challenge:'Reading Challenge',advanced:'Advanced Reading'}[m]);reset.onclick=()=>restartSection(m);
-  actions.append(resume,reset);launch.after(actions);
- }
-
+ // One card per activity: the card itself continues, with a quiet restart link.
+ updateReadingCards();
 }
+function updateReadingCards(){
+ const names={diagnostic:'Quick Reading Check',skills:'Reading Skills',reading:'Reading Practice',challenge:'Reading Challenge',advanced:'Advanced Reading'};
+ const totals={diagnostic:6,skills:10,reading:texts[0].questions.length+1,challenge:texts[1].questions.length+1,advanced:sectionReadingBanks.advanced.reduce((n,t)=>n+t.questions.length,1)};
+ for(const m of Object.keys(names)){
+  const launch=$(m+'Launch');if(!launch)continue;
+  $(m+'ResumeActions')?.remove();
+  let card=$(m+'Entry');
+  if(!card){card=document.createElement('div');card.id=m+'Entry';card.className='reading-entry';launch.before(card);card.append(launch);launch.dataset.originalSubtitle=launch.querySelector('small').textContent;}
+  card.querySelector('.reading-entry-footer')?.remove();card.querySelector('.reading-entry-progress')?.remove();
+  const total=totals[m],pos=Math.max(0,Math.min(Number(state.sessions?.[m]||0),total-1)),continuing=pos>0;
+  card.classList.toggle('in-progress',continuing);
+  const unit=m==='diagnostic'?'question':'step';
+  launch.querySelector('small').textContent=continuing?'Continue from '+unit+' '+(pos+1)+' of '+total:launch.dataset.originalSubtitle;
+  launch.setAttribute('aria-label',(continuing?'Continue ':'Start ')+names[m]+(continuing?', '+unit+' '+(pos+1)+' of '+total:''));
+  launch.onclick=()=>start(m,continuing);
+  if(!continuing)continue;
+  const progress=document.createElement('div');progress.className='reading-entry-progress';progress.setAttribute('role','progressbar');progress.setAttribute('aria-label',names[m]+' completed steps');progress.setAttribute('aria-valuemin','0');progress.setAttribute('aria-valuemax',String(total));progress.setAttribute('aria-valuenow',String(pos));
+  const fill=document.createElement('span');fill.style.width=(100*pos/total)+'%';progress.append(fill);
+  const footer=document.createElement('div');footer.className='reading-entry-footer';
+  const status=document.createElement('span');status.textContent=pos+' of '+total+' completed';
+  const reset=document.createElement('button');reset.type='button';reset.className='reading-restart';reset.textContent='Start again';reset.setAttribute('aria-label','Restart '+names[m]+' from the beginning');reset.title='Restart this activity; keep your learning history';reset.onclick=()=>restartSection(m);
+  footer.append(status,reset);card.append(progress,footer);
+ }
+}
+
 function wordTasks(list){return list.map(v=>({type:'word',v}))}
 function qTasks(text){return text.questions.map(q=>({type:'mc',...q,passage:text}))}
 function restartSection(m){if(!confirm('Start this practice again? Your previous learning history and review progress will be kept.'))return;state.sessions=state.sessions||{};delete state.sessions[m];save();start(m,false)}
@@ -860,7 +892,7 @@ for(const [section,passages] of Object.entries(sectionReadingBanks))for(const pa
 }
 // Small vocabulary glossaries support access, never the assessed vocabulary item.
 const sectionGlossaries={
-'An unexpected hour at the museum':[['railway','relating to trains and tracks','ferroviari'],['workshop','a practical activity where people make or test things','taller pràctic']],
+'An unexpected hour at the museum':[['railway','relating to trains and tracks','ferroviari'],['workshop','a practical activity where people make or test things','taller pràctic'],['row','a line of things arranged next to each other','fila'],['label','a short piece of text attached to or placed near an object to identify or explain it','etiqueta / cartel·la informativa'],['weight','how heavy something is','pes']],
 'City views after sunset':[['rooftop','the top surface of a building','terrat'],['forecast','predicted in advance','previst'],['covered','with a roof or shelter','cobert']],
 'Two ways to explore Harbour Island':[['ferry','a boat carrying people across water','ferri'],['bicycle hire','paying to use a bicycle temporarily','lloguer de bicicletes'],['linger','stay longer in a place','quedar-se més estona'],['secluded','away from other people','apartat']],
 'A quieter kind of adventure':[['lodge','a place to stay, often in the countryside','allotjament rural'],['damaged','broken or harmed','malmès'],['animal tracks','marks animals leave on the ground','rastres d’animals'],['refund','money paid back to a customer','reemborsament']],
