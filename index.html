@@ -416,7 +416,63 @@ function toggleGlobalCatalan(){
  catalanEnabled=!catalanEnabled;try{localStorage.setItem('around-world-catalan-global',catalanEnabled?'on':'off')}catch{}
  applyGlobalCatalan();
 }
+
+// Translate Home interface labels only. Exercise content remains in English.
+const homeLanguagePairs = [
+ ['.atlas-hero .atlas-kicker','UNIT 2 · ENGLISH','UNITAT 2 · ANGLÈS'],
+ ['.atlas-hero h1','Your learning space','El teu espai d’aprenentatge'],
+ ['.atlas-hero p','Explore vocabulary, practise grammar and build your reading confidence.','Explora el vocabulari, practica la gramàtica i millora la comprensió lectora.'],
+ ['.journey-heading h2','Your learning journey','El teu recorregut d’aprenentatge'],
+ ['.journey-intro','Follow the recommended order or choose the activity you need. All sections are available.','Segueix l’ordre recomanat o tria l’activitat que necessitis. Totes les seccions estan disponibles.'],
+ ['.journey-vocab > p','Practise 46 travel words in varied, 12-activity sessions.','Practica 46 paraules relacionades amb els viatges en sessions variades de 12 activitats.'],
+ ['.journey-vocab .journey-actions button','Start Vocabulary Lab →','Comença Vocabulary Lab →'],
+ ['.journey-grammar:nth-of-type(2) > p','Explore possible future situations and their consequences.','Explora situacions futures possibles i les seves conseqüències.'],
+ ['.journey-grammar:nth-of-type(2) .journey-actions button','Practise grammar →','Practica la gramàtica →'],
+ ['.journey-grammar:nth-of-type(3) > p','Choose between will, going to, present continuous and present simple.','Aprèn a triar entre will, going to, present continuous i present simple.'],
+ ['.journey-grammar:nth-of-type(3) .journey-actions button','Explore future forms →','Explora les formes de futur →'],
+ ['.journey-reading > p','Learn strategies, apply them to texts and build confidence.','Aprèn estratègies, aplica-les als textos i guanya confiança.'],
+ ['#diagnosticLaunch small','Discover what you already know','Descobreix què saps'],
+ ['#skillsLaunch small','Learn the strategies','Aprèn les estratègies'],
+ ['#readingLaunch small','Practise assessment skills','Practica les habilitats avaluades'],
+ ['#challengeLaunch small','Apply what you know','Aplica el que saps'],
+ ['#advancedLaunch small','Optional extension for confident readers','Ampliació opcional per a lectors avançats'],
+ ['.journey-footer span:first-child','Suggested route: Vocabulary → Grammar → Reading','Itinerari recomanat: Vocabulary → Grammar → Reading'],
+ ['.journey-footer span:last-child','No activities are locked by this order.','Pots accedir a totes les activitats en qualsevol ordre.'],
+ ['.review-panel h3','Daily Review','Repàs diari'],
+ ['.review-panel p','Revisit words and skills that need more practice.','Repassa les paraules i habilitats que necessiten més pràctica.'],
+ ['.review-panel button','Start Daily Review →','Comença el repàs diari →'],
+ ['#recommendation','', ''],
+ ['#glossaryButton','Reading strategy glossary ','Glossari d’estratègies de lectura '],
+ ['.progress-tools h4','Move your progress between devices','Trasllada el progrés entre dispositius'],
+ ['.progress-tools button:nth-of-type(1)','Export progress code','Exporta el codi de progrés'],
+ ['.progress-tools button:nth-of-type(2)','Import progress code','Importa el codi de progrés'],
+ ['.progress-tools .foot','Progress is stored in this browser. Export your code to move devices. No login or internet needed. Avoid private information.','El progrés es desa en aquest navegador. Exporta el codi per canviar de dispositiu. No cal iniciar sessió ni tenir internet. Evita les dades personals.'],
+ ['#reportHome h2','My Learning Report','El meu informe d’aprenentatge'],
+ ['#reportHome > p:first-of-type','Download your learning report. No name, email or personal details are requested. Submit the file through your school platform.','Descarrega l’informe d’aprenentatge. No es demanen noms, correus ni dades personals. Lliura el fitxer a través de la plataforma de l’escola.'],
+ ['#reportHome > p:nth-of-type(2)','Your report includes completed activities, first-try success, retries and support used. All data stays in this browser until you download the file.','L’informe inclou les activitats completades, els encerts al primer intent, els reintents i les ajudes utilitzades. Les dades es mantenen al navegador fins que descarregues el fitxer.'],
+ ['#reportHome button:nth-of-type(1)','Open printable report (Save as PDF)','Obre l’informe imprimible (desa’l com a PDF)'],
+ ['#reportHome button:nth-of-type(2)','Download styled HTML report','Descarrega l’informe HTML'],
+ ['#reportHome button:nth-of-type(3)','Download CSV data (optional)','Descarrega les dades CSV (opcional)'],
+ ['#reportHome > p:last-of-type','You can download a partial report at any time.','Pots descarregar un informe parcial en qualsevol moment.']
+];
+function applyHomeLanguage(){
+ const ca=isCatalan();
+ for(const [selector,en,cat] of homeLanguagePairs){
+  if(!en)continue;
+  const el=document.querySelector(selector);if(!el)continue;
+  if(selector==='#glossaryButton'){
+   const node=Array.from(el.childNodes).find(n=>n.nodeType===3);
+   if(node)node.textContent=ca?cat:en;
+  }else el.textContent=ca?cat:en;
+ }
+ const homePanel=document.querySelector('#home > .panel:not(.journey-panel):not(.review-panel):not(#reportHome) > h3');
+ if(homePanel)homePanel.textContent=ca?'El teu aprenentatge':'Your learning';
+ const transfer=$('transfer');if(transfer)transfer.placeholder=ca?'Codi de progrés (opcional)':'Progress code (optional)';
+ const lang=$('glossaryLanguage');if(lang)lang.textContent=ca?'(Català)':'(English)';
+}
+
 function applyGlobalCatalan(){
+ applyHomeLanguage();
  const ca=isCatalan(),btn=$('globalCatalan');if(btn){btn.textContent='Català: '+(ca?'ON':'OFF');btn.setAttribute('aria-pressed',String(ca))}
  if($('glossary')&&!$('glossary').classList.contains('hidden'))renderGlossary();
  const t=tasks[index];if(t&&!$('task').classList.contains('hidden')){
