@@ -535,7 +535,7 @@ function showResumes(){
  updateReadingCards();
 }
 function updateReadingCards(){
- const names={diagnostic:'Quick Reading Check',skills:'Reading Skills',reading:'Reading Practice',challenge:'Reading Challenge',advanced:'Advanced Reading',galway:'Ready for Galway?',newreading:'Reading Practice · CA1/CA2 (new)',future:'Future Forms'};
+ const names={diagnostic:'Quick Reading Check',skills:'Reading Skills',challenge:'Reading Challenge',advanced:'Advanced Reading'};
  const totals={diagnostic:6,skills:10,reading:texts[0].questions.length+1,challenge:texts[1].questions.length+1,advanced:sectionReadingBanks.advanced.reduce((n,t)=>n+t.questions.length,1)};
  for(const m of Object.keys(names)){
   const launch=$(m+'Launch');if(!launch)continue;
